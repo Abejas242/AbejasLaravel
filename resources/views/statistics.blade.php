@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
-    $con1=[];
-    if (empty($con1)) {
+   
+    if (!isset($con1)) {
         $con1=[];
     }
-    $con3=[];
-    if (empty($con3)) {
+
+    if (!isset($con3)) {
         $con3=[];
     }
 ?>
