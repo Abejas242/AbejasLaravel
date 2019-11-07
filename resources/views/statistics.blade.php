@@ -121,7 +121,7 @@
                                     data: [
                                         
                                         
-                                        [<?php echo $con ?>]
+                                        [<?php echo $consulta ?>]
                                         
                                         
                                     ]
@@ -133,7 +133,7 @@
                                     data: [
                                         
                                         
-                                        [<?php echo $con2 ?>]
+                                        [<?php echo $consulta2 ?>]
                                        
                                         
                                     ]

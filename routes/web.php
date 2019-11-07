@@ -28,7 +28,7 @@ Route::get('/home', 'HomeController@index');
 
 Route::resource('controler', 'Controller');
 
-Route::post('/statistics', 'StatisticsController@store');
+Route::post('/Statistics', 'StatisticsController@store');
 Route::post('/Analysis', 'AnalysisController@store');
 
 Route::name('consultar')->get('/consultar','Controller@consultar');
