@@ -2,11 +2,11 @@
 <?php
     $con1;
     if (empty($con1)) {
-        $con1="0";
+        $con1=[];
     }
     $con3;
     if (empty($con3)) {
-        $con3="0";
+        $con3=[];
     }
 ?>
 <html lang="en">
