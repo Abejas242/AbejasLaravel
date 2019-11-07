@@ -121,7 +121,7 @@
                                     data: [
                                         
                                         
-                                        [<?php echo $consulta ?>]
+                                        [<?php echo $consulta ?>],
                                         
                                         
                                     ]
@@ -133,7 +133,7 @@
                                     data: [
                                         
                                         
-                                        [<?php echo $consulta2 ?>]
+                                        [<?php echo $consulta2 ?>],
                                        
                                         
                                     ]
