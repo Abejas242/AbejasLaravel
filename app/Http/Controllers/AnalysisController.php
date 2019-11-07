@@ -40,29 +40,25 @@ class AnalysisController extends Controller
         $con = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
                 ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable,'and','actividad.hora','between','00:00:00',
-                'and','06:00:00')
+                ->where('clima_ambiente.fecha','=',$variable)
                 ->max('actividad.entrada');
 
         $con1 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
                 ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable,'and','actividad.hora','between','06:00:00',
-                'and','12:00:00')
+                ->where('clima_ambiente.fecha','=',$variable)
                 ->max('actividad.entrada');
 
         $con2 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
                 ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable,'and','actividad.hora','between','12:00:00',
-                'and','18:00:00')
+                ->where('clima_ambiente.fecha','=',$variable)
                 ->max('actividad.entrada');
 
         $con3 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
                 ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable,'and','actividad.hora','between','18:00:00',
-                'and','00:00:00')
+                ->where('clima_ambiente.fecha','=',$variable)
                 ->max('actividad.entrada');
 
         
@@ -71,6 +67,6 @@ class AnalysisController extends Controller
 
 
         //return view('analysis',compact('c1'));
-        return view('analysis2',compact('con','con1','con2','con3'));  
+        return view('analysis',compact('con','con1','con2','con3'));  
     }
 }
