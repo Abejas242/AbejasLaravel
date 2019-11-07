@@ -73,7 +73,7 @@ class StatisticsController extends Controller
            
         }           
 
-    return view('statistics',compact('con1','con3'));
+    return view('statistics2',compact('con1','con3'));
     
     }
 }

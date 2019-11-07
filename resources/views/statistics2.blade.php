@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <?php
-    $consulta;
-    if (empty($consulta)) {
-        $consulta="0";
+    if (empty($con1)) {
+        $con1=[];
     }
-    $consulta1;
-    if (empty($consulta1)) {
-        $consulta1="0";
-    }
-    $consulta2;
-    if (empty($consulta2)) {
-        $consulta2="0";
+
+    if (empty($con3)) {
+        $con3=[];
     }
 ?>
 <html lang="en">
@@ -107,8 +102,8 @@
                                     name: 'Temperatura',
                                     data: [
                                         
-                                        <?php foreach ($consulta as $con): ?>
-                                        [<?php echo $con ?>],
+                                        <?php foreach ($con1 as $c1): ?>
+                                        [<?php echo $c1 ?>],
                                         <?php endforeach ?>
                                         
                                     ]
@@ -116,8 +111,8 @@
                                     name: 'Humedad',
                                     data: [
                                         
-                                        <?php foreach ($consulta1 as $con1): ?>
-                                        [<?php echo $con1 ?>],
+                                         <?php foreach ($con1 as $c1): ?>
+                                        [<?php echo $c1 ?>],
                                         <?php endforeach ?>
                                         
                                     ]
@@ -125,9 +120,10 @@
                                     name: 'Temperatura apiario',
                                     data: [
                                         
-                                        <?php foreach ($consulta2 as $con2): ?>
-                                        [<?php echo $con2 ?>],
+                                        <?php foreach ($con3 as $c3): ?>
+                                        [<?php echo $c3 ?>],
                                         <?php endforeach ?>
+                                        
                                         
                                     ]
                                 }],

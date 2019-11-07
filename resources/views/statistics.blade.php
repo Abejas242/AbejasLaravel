@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
    
-    if (!isset($con1)) {
+    if (empty($con1)) {
         $con1=[];
     }
 
-    if (!isset($con3)) {
+    if (empty($con3)) {
         $con3=[];
     }
 ?>
@@ -69,6 +69,7 @@
         </div>
 
         <main>
+
             <div class="datos">
                 <fieldset class="datos-basicos" >
                     <legend>Datos basicos</legend>
