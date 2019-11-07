@@ -69,6 +69,13 @@
                 </fieldset> 
             </section> 
          </div>
+         <?php 
+            $actividadTotal;
+            if(empty($actividadTotal)){
+                $actividadTotal = "0";
+            }
+        ?>
+         <h3></h3>
         
 
             <div class="reporte">

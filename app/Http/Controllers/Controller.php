@@ -22,8 +22,14 @@ class Controller extends BaseController
                     ->select('apiario.nombre','users.name','ubicacion.url')
                     ->where('clima_apiario.fecha','=',$fecha)
                     ->get();
-        $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-        return $pdf->download('ejemplo.pdf');
+
+        if (isset($apiario)) {
+            return view('reports',compact('apiario'));
+        }else{
+            $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
+            return $pdf->download('ejemplo.pdf');
+        }
+        
     }
 
     function consultar(Request $request){
@@ -48,13 +54,14 @@ class Controller extends BaseController
                         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
                         ->join('actividad','actividad.apiario_id','=','apiario.id')
                         ->where('clima_ambiente.temperatura','=',$temperatura, 
-                            'or', 'clima_ambiente.porcentaje_humedad','=',$humedad)
+                            'or', 'clima_ambiente."Porcentaje_Humedad"','=',$humedad)
                         ->get();
 
         foreach ($estimacion as $datos) {
             $actividadParcial = (($datos->entrada) + ($datos->salida));
             $actividadTotal = $actividadTotal + $actividadParcial;
-        }   
+        }  
+
         if (isset($estimacion)) {
             $actividadTotal = "0";
         }else{
