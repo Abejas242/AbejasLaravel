@@ -4,10 +4,6 @@
     if (empty($consulta)) {
         $consulta="0";
     }
-    $consulta1;
-    if (empty($consulta1)) {
-        $consulta1="0";
-    }
     $consulta2;
     if (empty($consulta2)) {
         $consulta2="0";
@@ -76,7 +72,7 @@
                 <fieldset class="datos-basicos" >
                     <legend>Datos basicos</legend>
                     
-                    <form id="formulario" method="POST" action="{{url('statistics')}}" > 
+                    <form id="formulario" method="POST" action="{{url('Statistics')}}" > 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <label name="temperatura">Temperatura</label>
                         <br>    
@@ -124,27 +120,21 @@
                                     name: 'Temperatura',
                                     data: [
                                         
-                                        <?php foreach ($consulta as $con): ?>
-                                        [<?php echo $con ?>],
-                                        <?php endforeach ?>
+                                        
+                                        [<?php echo $con ?>]
+                                        
                                         
                                     ]
                                 },{
                                     name: 'Humedad',
-                                    data: [
-                                        
-                                        <?php foreach ($consulta1 as $con1): ?>
-                                        [<?php echo $con1 ?>],
-                                        <?php endforeach ?>
-                                        
-                                    ]
+                                    data: [0]
                                 },{
                                     name: 'Temperatura apiario',
                                     data: [
                                         
-                                        <?php foreach ($consulta2 as $con2): ?>
-                                        [<?php echo $con2 ?>],
-                                        <?php endforeach ?>
+                                        
+                                        [<?php echo $con2 ?>]
+                                       
                                         
                                     ]
                                 }],
