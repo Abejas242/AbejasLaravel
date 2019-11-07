@@ -77,12 +77,12 @@
                         <button type="submit" name="submit" class="submit" action="{{url('/estimar')}}" >Consultar</button>
                         <br><br>
 <?php 
-    $estimacion;
-    if(empty($estimacion)){
-        $estimacion = "No hay nada PHP";
+    $actividadTotal;
+    if(empty($actividadTotal)){
+        $actividadTotal = "1";
     }
 ?>
-                        <h3>La actividad sera aproximadamente = {{ $estimacion }}</h3>
+                        <h3>La actividad sera aproximadamente = {{ $actividadTotal }}</h3>
                     </form>
                 </fieldset>
             </div>
