@@ -121,9 +121,8 @@
                                     name: 'Temperatura',
                                     data: [
                                         
-                                        <?php foreach ($consulta as $con): ?>
-                                        [<?php echo $con ?>],
-                                        <?php endforeach ?>
+                                        [<?php echo $consulta ?>],
+                                        
                                         
                                     ]
                                 },{
@@ -133,9 +132,9 @@
                                     name: 'Temperatura apiario',
                                     data: [
                                         
-                                        <?php foreach ($consulta2 as $con2): ?>
-                                        [<?php echo $con2 ?>],
-                                        <?php endforeach ?>
+                                        
+                                        [<?php echo $consulta2 ?>],
+                                        
                                         
                                     ]
                                 }],
