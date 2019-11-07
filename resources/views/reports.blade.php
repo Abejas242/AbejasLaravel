@@ -35,87 +35,85 @@
                 @endif
             </div>
         
-    </header>
+        </header>
 
-    <div class="barra">
-        <nav id="nav" class="navegacion-principal contenedor">
-            <a href="{{ url('/reports') }}">Reportes</a>
-            <a href="{{ url('/statistics') }}">Estadisticas</a>
-            <a href="{{ url('/estimates') }}">Estimaciones</a>
-            <a href="{{ url('/analysis') }}">Analisis</a>
-            <a href="{{ url('/help') }}">Ayudas</a>
-        </nav>
-    </div>
+        <div class="barra">
+            <nav id="nav" class="navegacion-principal contenedor">
+                <a href="{{ url('/reports') }}">Reportes</a>
+                <a href="{{ url('/statistics') }}">Estadisticas</a>
+                <a href="{{ url('/estimates') }}">Estimaciones</a>
+                <a href="{{ url('/analysis') }}">Analisis</a>
+                <a href="{{ url('/help') }}">Ayudas</a>
+            </nav>
+        </div>
 
-    <div class="top-left">
-        <div class="content">
-            <div class="title m-b-md">
-                Reportes
+        <div class="top-left">
+            <div class="content">
+                <div class="title m-b-md">
+                    Reportes
+                </div>
             </div>
         </div>
-    </div>
 
-    <main> 
-        <form action="{{url('/imprimir')}}">
-        <input type="hidden" name="_token" value="{{ csrf_token() }}">
-        <div class="fecha-contenedor"> 
-            <section>
-                <fieldset class="fieldset"> 
-                    <legend class="leyenda">Fecha del apiario</legend>
-                    <label class="fecha" for="fecha">Fecha: </label>
-                    <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
-                    <br><br>
-                    <button type="submit"id="boton_general" class="boton-general">Exportar todo</button>
-                </fieldset> 
-            </section> 
-         </div>
-         <?php 
-            $actividadTotal;
-            if(empty($actividadTotal)){
-                $actividadTotal = "0";
-            }
-        ?>
-         <h3></h3>
-        
-
-            <div class="reporte">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Id</th><th>Horario</th><th>Exportar a PDF</th>
-                    </tr>
-                </thead>
-
-                <tr>
-                    <td>1</td>
-                    <td>12am - 6am</td>
-                    <td><button id="boton_hora_1" type="submit" class="boton-real">Exportar</button></td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>6am - 12pm</td>
-                    <td><button id="boton_hora_2" type="submit" class="boton-real">Exportar</button></td></td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>12pm - 6pm</td>
-                    <td><button id="boton_hora_3" type="submit" class="boton-real">Exportar</button></td></td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>6pm - 12am</td>
-                    <td><button id="boton_hora_4" type="submit" class="boton-real">Exportar</button></td></td>
-                </tr>
-            </table>
-            
+        <main> 
+            <form action="{{url('/imprimir')}}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <div class="fecha-contenedor"> 
+                <section>
+                    <fieldset class="fieldset"> 
+                        <legend class="leyenda">Fecha del apiario</legend>
+                        <label class="fecha" for="fecha">Fecha: </label>
+                        <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                        <br><br>
+                        <button type="submit"id="boton_general" class="boton-general">Exportar todo</button>
+                    </fieldset> 
+                </section> 
             </div>
-            </form>
-    </main>
-   
-    <footer>
-        
-    </footer>
+    <?php 
+        $apiario;
+        if(empty($apiario)){
+            $apiario = "No se encontro un apiario.";
+        }
+    ?>
+            <h3>{{ $apiario }}</h3>
+            
 
-        
+                <div class="reporte">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Id</th><th>Horario</th><th>Exportar a PDF</th>
+                        </tr>
+                    </thead>
+
+                    <tr>
+                        <td>1</td>
+                        <td>12am - 6am</td>
+                        <td><button id="boton_hora_1" type="submit" class="boton-real">Exportar</button></td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>6am - 12pm</td>
+                        <td><button id="boton_hora_2" type="submit" class="boton-real">Exportar</button></td></td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>12pm - 6pm</td>
+                        <td><button id="boton_hora_3" type="submit" class="boton-real">Exportar</button></td></td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>6pm - 12am</td>
+                        <td><button id="boton_hora_4" type="submit" class="boton-real">Exportar</button></td></td>
+                    </tr>
+                </table>
+                
+                </div>
+                </form>
+        </main>
+    
+        <footer>
+        </footer>
+
     </body>
 </html>
