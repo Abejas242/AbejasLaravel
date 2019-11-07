@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <?php
-    $con1;
+    $con1=[];
     if (empty($con1)) {
         $con1=[];
     }
-    $con3;
+    $con3=[];
     if (empty($con3)) {
         $con3=[];
     }
@@ -89,7 +89,7 @@
                         <br> <br>
                         <button type="submit" name="submit" class="boton-consulta">Ver</button>
                         <br><br>
-                        <h2>{{$con1}}</h2>
+
                     </form>
                 </fieldset>
             </div>
