@@ -58,14 +58,14 @@ class StatisticsController extends Controller
                 ->where('clima_apiario.temperatura','=',$variable2)
                 ->get();
 
-        
+        $con1=[];
         foreach ($consulta as $c) {
-            $actividad =  $c->entrada;
+            $con1 =  $c->entrada;
            
         }       
 
     //return view('statistics',compact('consulta','consulta2'));
-    return $actividad;
+    return $con1;
     }
 }
 
