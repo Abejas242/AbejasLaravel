@@ -56,11 +56,18 @@ class StatisticsController extends Controller
                 ->join('actividad','actividad.apiario_id','=','clima_apiario.apiario_id')
                 ->select('actividad.entrada')
                 ->where('clima_apiario.temperatura','=',$variable2)
-                ->get();   
+                ->get();
+
+        $cons=[];
+        $i=0;
+        while ($con=array($consulta)) {
+             $cons[$i]=$con['entrada'];
+                $i++;
+         } 
                 
 
     //return view('statistics',compact('consulta','consulta2'));
-      return $consulta;          
+
     }
 }
 
