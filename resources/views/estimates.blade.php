@@ -79,10 +79,10 @@
 <?php 
     $actividadTotal;
     if(empty($actividadTotal)){
-        $actividadTotal = "1";
+        $actividadTotal = "0";
     }
 ?>
-                        <h3>La actividad sera aproximadamente = {{ $actividadTotal }}</h3>
+                        <h3>La actividad es aproximadamente = {{ $actividadTotal }}</h3>
                     </form>
                 </fieldset>
             </div>

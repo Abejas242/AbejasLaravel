@@ -24,10 +24,10 @@ class Controller extends BaseController
                     ->get();
 
         if (isset($apiario)) {
-            return view('reports',compact('apiario'));
-        }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
             return $pdf->download('ejemplo.pdf');
+        }else{
+            return view('reports',compact('apiario'));
         }
         
     }
@@ -68,7 +68,6 @@ class Controller extends BaseController
         }else{
             $actividadTotal = "0";
         }
-
         return view('estimates',compact('actividadTotal'));
     }
      
