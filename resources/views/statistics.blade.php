@@ -23,6 +23,7 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/base.css" type="text/css">
         <link rel="stylesheet" href="css/statistics.css" type="text/css">
+        <script type="text/javascript"src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     </head>
 
@@ -121,19 +122,19 @@
                                     data: [
                                         
                                         
-                                        [<?php echo $consulta ?>],
+                                        [<?php echo $consulta ?>,]
                                         
                                         
                                     ]
                                 },{
                                     name: 'Humedad',
-                                    data: [0]
+                                    data: [1,2,3,4]
                                 },{
                                     name: 'Temperatura apiario',
                                     data: [
                                         
                                         
-                                        [<?php echo $consulta2 ?>],
+                                        [<?php echo $consulta2 ?>,]
                                        
                                         
                                     ]
