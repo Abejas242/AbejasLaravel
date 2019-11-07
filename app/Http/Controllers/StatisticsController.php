@@ -46,11 +46,11 @@ class StatisticsController extends Controller
                 ->where('clima_ambiente.temperatura','=',$variable)
                 ->get();
 
-        /*$consulta1=\DB::table('clima_ambiente')
+        $consulta1=\DB::table('clima_ambiente')
                 ->join('actividad','actividad.apiario_id','=','clima_ambiente.apiario_id')
                 ->select('actividad.entrada')
                 ->where('clima_ambiente."Porcentaje_Humedad"','=',$variable1)
-                ->get();*/
+                ->get();
 
         $consulta3=\DB::table('clima_apiario')
                 ->join('actividad','actividad.apiario_id','=','clima_apiario.apiario_id')
