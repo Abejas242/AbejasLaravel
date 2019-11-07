@@ -71,6 +71,6 @@ class AnalysisController extends Controller
 
 
         //return view('analysis',compact('c1'));
-        return view('analysis',compact('con','con1','con2','con3'));  
+        return view('analysis2',compact('con','con1','con2','con3'));  
     }
 }

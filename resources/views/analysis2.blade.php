@@ -1,4 +1,24 @@
 <!DOCTYPE html>
+<?php
+    $con;
+    if (empty($con)) {
+        $con="0";
+    }
+    $con1;
+    if (empty($con1)) {
+        $con1="0";
+    }
+    $con2;
+    if (empty($con2)) {
+        $con2="0";
+    }
+    $con3;
+    if (empty($con3)) {
+        $con3="0";
+    }
+   
+
+?>
 <html lang="en">
 
     <head>
@@ -25,7 +45,7 @@
     <body>
         <header>
             <div class="izq">
-                <h3>Bee Lab - Analisis</h3>
+                <h3>Bee Lab - Análisis</h3>
             </div>
             <div class="der">
                 @if (Route::has('login'))
@@ -49,7 +69,7 @@
             <a href="{{ url('/reports') }}">Reportes</a>
             <a href="{{ url('/statistics') }}">Estadisticas</a>
             <a href="{{ url('/estimates') }}">Estimaciones</a>
-            <a href="{{ url('/analysis') }}">Analisis</a>
+            <a href="{{ url('/analysis') }}">Análisis</a>
             <a href="{{ url('/help') }}">Ayudas</a>
         </nav>
     </div>
@@ -64,7 +84,7 @@
 
     <main>
         <div class="contenedor-principal">
-            <form action="" >
+            <form action="{{url('/Analysis')}}" method="POST" >
 
             <div class="contenedor-datos">
                 <fieldset>
@@ -74,8 +94,9 @@
                         <label class="fecha" for="fecha">Fecha:</label>
                         <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date">
                         <br><br>
-                        <button type="submit" id="boton_general" class="boton-general" onclick="funcion();">Ver gráfica</button>
-                        <br><br>
+                        
+                        <button type="submit" id="boton_general" class="boton-general">Ver gráfica</button>
+                        <br>
                     </div>
 
                 </fieldset>
@@ -86,12 +107,12 @@
                     <br>
                         <form>
                             <div class="com-izq">
-                                <textarea rows="10" cols="40"></textarea> 
+                                <textarea rows="10" cols="40" disabled="true"></textarea> 
                                 <br><br>                   
                             </div>          
                             <div class="com-der">
                                 <button id="Agregar" type="submit" class="boton-general ">Agregar</button>
-                                <br>
+                                <br><br>
                             </div>
                         </form>
                 </fieldset>
@@ -101,10 +122,7 @@
            
                 <div id="container" class="grafica">
                     <script type="text/javascript">
-
-                                                 
-
-                                Highcharts.chart('container', {
+                            Highcharts.chart('container', {
                                     title: {
                                         text: 'Análisis estadístico de actividad'
                                     },
@@ -127,19 +145,19 @@
                                     series: [{
                                         type: 'column',
                                         name: 'Temperatura ambiente',
-                                        data: [<?php echo $con ?>, 2, 2, 3]
+                                        data: [<?php echo $con ?>, <?php echo $con1 ?>, <?php echo $con2 ?>, <?php echo $con3 ?>]
                                     }, {
                                         type: 'column',
                                         name: 'Humedad',
-                                        data: [<?php echo $con1 ?>, 3, 5, 7]
+                                        data: [2, 3, 5, 7]
                                     }, {
                                         type: 'column',
                                         name: 'Temperatura colmena',
-                                        data: [<?php echo $con2 ?>, 3, 3, 9]
+                                        data: [2, 3, 3, 9]
                                     }, {
                                         type: 'spline',
                                         name: 'Promedio',
-                                        data: [<?php echo $con3 ?>, 2.67, 3, 6.33],
+                                        data: [2, 2.67, 3, 6.33],
                                         marker: {
                                             lineWidth: 2,
                                             lineColor: Highcharts.getOptions().colors[3],
@@ -169,6 +187,9 @@
                                         }
                                     }]
                                 });
+                                                 
+
+                              
                     </script>            
                 </div>
             </form>
