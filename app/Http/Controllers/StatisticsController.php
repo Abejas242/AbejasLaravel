@@ -59,8 +59,9 @@ class StatisticsController extends Controller
                 ->get();
 
         $con1=[];
+        $i=0;
         foreach ($consulta as $c) {
-            $con1 =  $c->entrada;
+            $con1[$i]=  $c->entrada;
            
         }       
 
