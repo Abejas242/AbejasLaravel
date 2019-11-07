@@ -40,25 +40,25 @@ class AnalysisController extends Controller
         $con = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
                 ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable)
+                ->where('clima_ambiente.fecha','=',$variable,'and','clima_ambiente.hora','between','00:00:00','and','06:00:00')
                 ->max('actividad.entrada');
 
         $con1 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
                 ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable)
+                ->where('clima_ambiente.fecha','=',$variable,'and','clima_ambiente.hora','between','06:00:00','and','12:00:00')
                 ->max('actividad.entrada');
 
         $con2 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
                 ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable)
+                ->where('clima_ambiente.fecha','=',$variable,'and','clima_ambiente.hora','between','12:00:00','and','18:00:00')
                 ->max('actividad.entrada');
 
         $con3 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
                 ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable)
+                ->where('clima_ambiente.fecha','=',$variable,'and','clima_ambiente.hora','between','18:00:00','and','23:59:59')
                 ->max('actividad.entrada');
 
         
