@@ -53,8 +53,8 @@ class Controller extends BaseController
                         ->select('actividad.entrada','actividad.salida','apiario.id')
                         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
                         ->join('actividad','actividad.apiario_id','=','apiario.id')
-                        ->where('clima_ambiente.temperatura','=',$temperatura, 
-                            'or', 'clima_ambiente."Porcentaje_Humedad"','=',$humedad)
+                        ->where('clima_ambiente.temperatura','=',11, 
+                            'or', 'clima_ambiente."Porcentaje_Humedad"','=',15)
                         ->get();
 
         foreach ($estimacion as $datos) {
