@@ -145,7 +145,7 @@
                                     series: [{
                                         type: 'column',
                                         name: 'Temperatura ambiente',
-                                        data: [<?php echo $con ?>, <?php echo $con1 ?>, <?php echo $con2 ?>, <?php echo $con3 ?>]
+                                        data: [<?php echo $con ?>,1,2,3]
                                     }, {
                                         type: 'column',
                                         name: 'Humedad',
