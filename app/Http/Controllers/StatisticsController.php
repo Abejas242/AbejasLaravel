@@ -62,6 +62,7 @@ class StatisticsController extends Controller
         $i=0;
         foreach ($consulta as $c) {
             $con1[$i]=  $c->entrada;
+            $i++;
            
         }       
 
