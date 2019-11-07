@@ -8,14 +8,17 @@ fieldset{
 /*Datos basicos*/
 
 .datos{
-    padding: 0px 35%;
+    padding: 0px 25%;
 }
 #container{
-    padding: 0px 20%;
+    padding: 0px 10%;
     padding-bottom: 5%; 
 }
 .datos-basicos{
     text-align: center;
+}
+.grafica{
+    padding: 0px 45%;
 }
 
 /**Textos**/
