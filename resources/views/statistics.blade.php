@@ -73,7 +73,7 @@
                 <fieldset class="datos-basicos" >
                     <legend>Datos basicos</legend>
                     
-                    <form id="formulario" method="POST" action="{{url('Statistics')}}" > 
+                    <form id="formulario" method="POST" action="{{url('statistics')}}" > 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <label name="temperatura">Temperatura</label>
                         <br>    
@@ -94,7 +94,7 @@
             </div>
             <div id="container" ><div>
                     
-            <div id="container" class="grafica">
+            <div class="grafica">
                 <script type="text/javascript">
                 Highcharts.chart('container', {
                                 title: {
@@ -121,21 +121,21 @@
                                     name: 'Temperatura',
                                     data: [
                                         
-                                        
-                                        [<?php echo $consulta ?>,]
-                                        
+                                        <?php foreach ($consulta as $con): ?>
+                                        [<?php echo $con ?>],
+                                        <?php endforeach ?>
                                         
                                     ]
                                 },{
                                     name: 'Humedad',
-                                    data: [1,2,3,4]
+                                    data: [0]
                                 },{
                                     name: 'Temperatura apiario',
                                     data: [
                                         
-                                        
-                                        [<?php echo $consulta2 ?>,]
-                                       
+                                        <?php foreach ($consulta2 as $con2): ?>
+                                        [<?php echo $con2 ?>],
+                                        <?php endforeach ?>
                                         
                                     ]
                                 }],
