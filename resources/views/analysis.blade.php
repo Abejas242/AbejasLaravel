@@ -2,19 +2,19 @@
 <?php
     $con;
     if (empty($con)) {
-        $con="0";
+        $con=0;
     }
     $con1;
     if (empty($con1)) {
-        $con1="0";
+        $con1=0;
     }
     $con2;
     if (empty($con2)) {
-        $con2="0";
+        $con2=0;
     }
     $con3;
     if (empty($con3)) {
-        $con3="0";
+        $con3=0;
     }
    
 
