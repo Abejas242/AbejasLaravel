@@ -57,7 +57,17 @@ class Controller extends BaseController
                             'or', 'clima_ambiente."Porcentaje_Humedad"','=',15)
                         ->get();
 
-       
+        
+        foreach ($estimacion as $datos) {
+            $actividadParcial = (($datos->entrada) + ($datos->salida));
+            $actividadTotal = $actividadTotal + $actividadParcial;
+        }  
+
+        if (isset($estimacion)) {
+            $actividadTotal = $actividadTotal/count($estimacion);
+        }else{
+            $actividadTotal = "0";
+        }
 
         return view('estimates',compact('estimacion'));
     }
