@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <?php
-    $consulta;
-    if (empty($consulta)) {
-        $consulta="0";
+    $con1;
+    if (empty($con1)) {
+        $con1="0";
     }
-    $consulta2;
-    if (empty($consulta2)) {
-        $consulta2="0";
+    $con3;
+    if (empty($con3)) {
+        $con3="0";
     }
 ?>
 <html lang="en">
@@ -121,19 +121,27 @@
                                     name: 'Temperatura',
                                     data: [
                                         
-                                        [<?php echo $consulta ?>],
+                                        <?php foreach ($con1 as $c1): ?>
+                                        [<?php echo $c1 ?>],
+                                        <?php endforeach ?>
                                         
                                         
                                     ]
                                 },{
                                     name: 'Humedad',
-                                    data: [0]
+                                    data: [
+                                        <?php foreach ($con1 as $c1): ?>
+                                        [<?php echo $c1 ?>],
+                                        <?php endforeach ?>
+                                    ]
                                 },{
                                     name: 'Temperatura apiario',
                                     data: [
                                         
                                         
-                                        [<?php echo $consulta2 ?>],
+                                        <?php foreach ($con3 as $c3): ?>
+                                        [<?php echo $c3 ?>],
+                                        <?php endforeach ?>
                                         
                                         
                                     ]
