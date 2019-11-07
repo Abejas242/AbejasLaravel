@@ -12,9 +12,6 @@
     if (empty($consulta2)) {
         $consulta2="0";
     }
-    
-   
-
 ?>
 <html lang="en">
 

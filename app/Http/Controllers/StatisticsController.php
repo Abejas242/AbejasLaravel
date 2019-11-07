@@ -59,7 +59,7 @@ class StatisticsController extends Controller
                 ->get();   
                 
 
-    return view('statistics',compact('consulta','consulta1','consulta2'));
+    return view('statistics',compact('consulta','consulta2'));
                 
     }
 }
