@@ -93,7 +93,7 @@
             </div>
             <div id="container" ><div>
                     
-            <div class="grafica">
+            <div id="container" class="grafica">
                 <script type="text/javascript">
                 Highcharts.chart('container', {
                                 title: {
