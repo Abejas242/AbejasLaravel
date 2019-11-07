@@ -69,7 +69,7 @@ class Controller extends BaseController
             $actividadTotal = "0";
         }
 
-        return view('estimates',compact('estimacion'));
+        return view('estimates',compact('actividadTotal'));
     }
      
 }
