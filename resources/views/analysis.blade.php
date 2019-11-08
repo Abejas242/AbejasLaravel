@@ -91,7 +91,7 @@
                     <br>
                     <div id="fechaContenedor" >
                         <label class="fecha" for="fecha">Fecha:</label>
-                        <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date">
+                        <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                         <br><br>
                         
                         <button type="submit" id="boton_general" class="boton-general">Ver gráfica</button>
@@ -187,8 +187,6 @@
                                     }]
                                 });
                                                  
-
-                              
                     </script>            
                 </div>
             </form>

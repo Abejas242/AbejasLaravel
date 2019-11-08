@@ -4,7 +4,9 @@
     if (empty($con1)) {
         $con1=[];
     }
-
+    if (empty($con2)) {
+        $con2=[];
+    }
     if (empty($con3)) {
         $con3=[];
     }
@@ -23,6 +25,10 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
         <link rel="stylesheet" href="css/base.css" type="text/css">
         <link rel="stylesheet" href="css/statistics.css" type="text/css">
+        <script src="plugins/highcharts/code/highcharts.js"></script>
+        <script src="plugins/highcharts/code/modules/series-label.js"></script>
+        <script src="plugins/highcharts/code/modules/exporting.js"></script>
+        <script src="plugins/highcharts/code/modules/export-data.js"></script>
         <script type="text/javascript"src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 
     </head>
@@ -95,7 +101,7 @@
                 </fieldset>
             </div>
             
-            <div id="container" ><div>
+            <div id="container" class="container" name="container" ><div>
                     
             <div class="grafica">
                 <script type="text/javascript">
@@ -133,8 +139,8 @@
                                 },{
                                     name: 'Humedad',
                                     data: [
-                                        <?php foreach ($con1 as $c1): ?>
-                                        [<?php echo $c1 ?>],
+                                        <?php foreach ($con2 as $c2): ?>
+                                        [<?php echo $c2 ?>],
                                         <?php endforeach ?>
                                     ]
                                 },{
