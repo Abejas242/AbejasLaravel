@@ -39,34 +39,40 @@ class AnalysisController extends Controller
 
         $con = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable,'and','clima_ambiente.hora','>=','"00:00:00"','and','clima_ambiente.hora','<=','"06:00:00"')
+                ->select('actividad.entrada')
+                ->DISTINCT()
+                ->where('clima_ambiente.fecha','=',$variable)
+                ->where('clima_ambiente.hora','>','00:00:00')
+                ->where('clima_ambiente.hora','<','06:00:00')
                 ->max('actividad.entrada');
 
         $con1 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable,'and','clima_ambiente.hora','>=','"06:00:00"','and','clima_ambiente.hora','<=','"12:00:00"')
+                ->select('actividad.entrada')
+                ->DISTINCT()
+                ->where('clima_ambiente.fecha','=',$variable)
+                ->where('clima_ambiente.hora','>','06:00:00')
+                ->where('clima_ambiente.hora','<','12:00:00')
                 ->max('actividad.entrada');
 
         $con2 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable,'and','clima_ambiente.hora','>=','"12:00:00"','and','clima_ambiente.hora','<=','"18:00:00"')
+                ->select('actividad.entrada')
+                ->DISTINCT()
+                ->where('clima_ambiente.fecha','=',$variable)
+                ->where('clima_ambiente.hora','>','12:00:00')
+                ->where('clima_ambiente.hora','<','18:00:00')
                 ->max('actividad.entrada');
 
         $con3 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.fecha')
-                ->where('clima_ambiente.fecha','=',$variable,'and','clima_ambiente.hora','>=','"18:00:00"','and','clima_ambiente.hora','<=','"23:59:59"')
+                ->select('actividad.entrada')
+                ->DISTINCT()
+                ->where('clima_ambiente.fecha','=',$variable)
+                ->where('clima_ambiente.hora','>','18:00:00')
+                ->where('clima_ambiente.hora','<','23:59:59')
                 ->max('actividad.entrada');
-
         
-
-
-
-
-        //return view('analysis',compact('c1'));
         return view('analysis',compact('con','con1','con2','con3'));
         
 }
