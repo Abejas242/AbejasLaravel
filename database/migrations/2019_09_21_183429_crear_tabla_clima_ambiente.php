@@ -16,7 +16,7 @@ class CrearTablaClimaAmbiente extends Migration
         Schema::create('clima_ambiente', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('temperatura');
-            $table->integer('Porcentaje_Humedad');
+            $table->integer('humedad');
             $table->date('fecha');
             $table->string('hora');
             $table->unsignedInteger('apiario_id');

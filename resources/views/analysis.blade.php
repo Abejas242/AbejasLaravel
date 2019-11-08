@@ -99,24 +99,7 @@
                     </div>
 
                 </fieldset>
-                <br><br>
-                <div class="comentario">
-                <fieldset>
-                    <legend class="ayuda-legend">Agregar comentario</legend>
-                    <br>
-                        <form>
-                            <div class="com-izq">
-                                <textarea rows="10" cols="40"></textarea> 
-                                <br><br>                   
-                            </div>          
-                            <div class="com-der">
-                                <button id="Agregar" type="submit" class="boton-general ">Agregar</button>
-                                <br><br>
-                            </div>
-                        </form>
-                </fieldset>
-                
-        </div>   
+                <br><br> 
             </div>
            
                 <div id="container" class="grafica">
