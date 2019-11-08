@@ -1,22 +1,21 @@
 <!DOCTYPE html>
-<?php
-    
+<?php 
+    $con;
     if (empty($con)) {
         $con=0;
     }
-
+    $con1;
     if (empty($con1)) {
         $con1=0;
     }
- 
+    $con2;
     if (empty($con2)) {
         $con2=0;
     }
-   
+    $con3;
     if (empty($con3)) {
         $con3=0;
     }
-   
 
 ?>
 <html lang="en">
@@ -107,7 +106,7 @@
                     <br>
                         <form>
                             <div class="com-izq">
-                                <textarea rows="10" cols="40" disabled="true"></textarea> 
+                                <textarea rows="10" cols="40"></textarea> 
                                 <br><br>                   
                             </div>          
                             <div class="com-der">
@@ -145,7 +144,7 @@
                                     series: [{
                                         type: 'column',
                                         name: 'Temperatura ambiente',
-                                        data: [<?php echo $con ?>,1,2,3]
+                                        data: [<?php echo $con ?>, <?php echo $con1 ?>, <?php echo $con2 ?>, <?php echo $con3 ?>]
                                     }, {
                                         type: 'column',
                                         name: 'Humedad',
