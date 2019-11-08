@@ -74,5 +74,5 @@ class AnalysisController extends Controller
                 ->max('actividad.entrada');
         
         return view('analysis',compact('con','con1','con2','con3'));
-        
+    } 
 }
