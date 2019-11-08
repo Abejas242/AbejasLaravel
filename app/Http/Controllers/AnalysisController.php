@@ -72,7 +72,8 @@ class AnalysisController extends Controller
                 ->where('clima_ambiente.hora','>','18:00:00')
                 ->where('clima_ambiente.hora','<','23:59:59')
                 ->max('actividad.entrada');
-        
-        return view('analysis',compact('con','con1','con2','con3'));
+
+
+      return view('analysis',compact('con','con1','con2','con3'));
     } 
 }
