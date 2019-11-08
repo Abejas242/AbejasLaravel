@@ -16,6 +16,11 @@ class Controller extends BaseController
 
         $fecha = $request-> input("fecha_ingresada");
         $apiario = \DB::table('apiario')
+                    ->select("apiario.nombre as nombreApiario",'actividad.entrada as entrada',
+                        'actividad.salida as salida',"ubicacion.url as url","users.name as nombreUsuario",
+                        "clima_ambiente.temperatura as temperaturaAmb",
+                        "clima_ambiente.\"Porcentaje_Humedad\" as humedadAmb",
+                        "clima_apiario.temperatura as temperaturaApi")
                     ->join('users','apiario.user_id','=','users.id')
                     ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
                     ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
