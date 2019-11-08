@@ -41,20 +41,20 @@ class StatisticsController extends Controller
         $variable2=$_POST['temperatura_apiario'];
 
         $consulta1=\DB::table('clima_ambiente')
-                ->join('actividad','actividad.apiario_id','=','clima_ambiente.apiario_id')
                 ->select('actividad.entrada')
+                ->join('actividad','actividad.apiario_id','=','clima_ambiente.apiario_id')
                 ->where('clima_ambiente.temperatura','=',$variable)
                 ->get();
 
         $consulta1=\DB::table('clima_ambiente')
-                ->join('actividad','actividad.apiario_id','=','clima_ambiente.apiario_id')
                 ->select('actividad.entrada')
+                ->join('actividad','actividad.apiario_id','=','clima_ambiente.apiario_id')
                 ->where('clima_ambiente."Porcentaje_Humedad"','=',$variable1)
                 ->get();
 
         $consulta3=\DB::table('clima_apiario')
-                ->join('actividad','actividad.apiario_id','=','clima_apiario.apiario_id')
                 ->select('actividad.entrada')
+                ->join('actividad','actividad.apiario_id','=','clima_apiario.apiario_id')
                 ->where('clima_apiario.temperatura','=',$variable2)
                 ->get();
 
