@@ -8,6 +8,10 @@
         $usuario = $datos->name;
         $ubicacion = $datos->url;
     }
+    $hora;
+    if(empty($hora)){
+        $hora = "Todo el dia";
+    }
 ?>
     <head>
         <meta charset="UTF-8">
@@ -20,7 +24,7 @@
         <header>
             <h1>Reporte de medición</h1>
             <h3>Seccion para la descripcion del documento.</h3>
-            <h4>Hora: <?php echo $hora ?></h4>
+            <h4><?php echo $hora ?></h4>
         </header>
 
         <main>
@@ -59,14 +63,14 @@
                                 </tr>
                             </thead>
                             <tr>
-                            <?php while($datos=$apiario->fetch_array()){ ?>  
-                                <td><?php echo $datos["temperaturaApi"] ?></td> 
+                            <?php foreach ($apiario as $datos) { ?>  
+                                <td><?php echo $datos->temperaturaApi ?></td> 
                             <?php } ?>  
                             </tr>
                             <tr>
-                            <?php while($datos=$apiario->fetch_array()){ ?>  
-                                <td><?php echo (($datos["entrada"] + $datos["salida"])/2) ?></td> 
-                            <?php } ?> 
+                            <?php foreach ($apiario as $datos) { ?>  
+                                <td><?php echo (($datos->entrada + $datos->salida)/2) ?></td> 
+                            <?php } ?>  
                             </tr>
                     </table>
                     </fieldset>
@@ -84,14 +88,14 @@
                             </thead>
 
                             <tr>
-                            <?php while($datos=$apiario->fetch_array()){ ?>  
-                                <td><?php echo $datos["temperaturaAmb"] ?></td> 
-                            <?php } ?> 
+                            <?php foreach ($apiario as $datos) { ?>  
+                                <td><?php echo $datos->temperaturaAmb ?></td> 
+                            <?php } ?>  
                             </tr>
                             <tr>
-                            <?php while($datos=$apiario->fetch_array()){ ?>  
-                                <td><?php echo $datos["humedad"] ?></td> 
-                            <?php } ?> 
+                            <?php foreach ($apiario as $datos) { ?>  
+                                <td><?php echo $datos->humedad ?></td> 
+                            <?php } ?>  
                             </tr>
                             </tr>
                         </table>
