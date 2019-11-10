@@ -47,7 +47,8 @@ class ReportsController extends Controller
             return view('/reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-            return $pdf->download('reporte.pdf');
+            $pdf->download('reporte.pdf');
+            return view('/reports',compact('apiario'));
         }
         
     }
