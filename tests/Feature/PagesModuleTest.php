@@ -14,37 +14,37 @@ class PagesModuleTest extends TestCase
     */
 
    /* Test para la vista home*/
-   public function testHome()
+   public function testHomeTest()
    {
         $this->get('/home')->assertStatus(200)->assertSee('home');
    }
 
     /* Test para la vista reports*/
-   public function testReports()
+   public function testReportsTest()
    {
         $this->get('/reports')->assertStatus(200)->assertSee('reports');
    }
 
    /* Test para la vista statistics*/
-   public function testStatistics()
+   public function testStatisticsTest()
    {
         $this->get('/statistics')->assertStatus(200)->assertSee('statistics');
    }
 
     /* Test para la vista estimates*/
-   public function testEstimates()
+   public function testEstimatesTest()
    {
         $this->get('/estimates')->assertStatus(200)->assertSee('estimates');
    }
 
    /* Test para la vista analysis*/
-   public function testAnalysis()
+   public function testAnalysisTest()
    {
         $this->get('/analysis')->assertStatus(200)->assertSee('analysis');
    }
 
    /* Test para la vista help*/
-   public function testHelp()
+   public function testHelpTest()
    {
         $this->get('/help')->assertStatus(200)->assertSee('help');
    }
