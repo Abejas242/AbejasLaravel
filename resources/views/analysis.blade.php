@@ -99,7 +99,7 @@
     <div class="barra">
         <nav id="nav" class="navegacion-principal contenedor">
             <a href="{{ url('/reports') }}">Reportes</a>
-            <a href="{{ url('/statistics') }}">Estadisticas</a>
+            <a href="{{ url('/statistics') }}">Estadísticas</a>
             <a href="{{ url('/estimates') }}">Estimaciones</a>
             <a href="{{ url('/analysis') }}">Análisis</a>
             <a href="{{ url('/help') }}">Ayudas</a>

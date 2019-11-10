@@ -42,9 +42,9 @@
                 </div>
                 <div class="links">
                     <a href="{{ url('/reports') }}" class="boton-main">Reportes</a>
-                    <a href="{{ url('/statistics')}}" class="boton-main">Estadisticas</a>
+                    <a href="{{ url('/statistics')}}" class="boton-main">Estadísticas</a>
                     <a href="{{ url('/estimates') }}" class="boton-main">Estimaciones</a>
-                    <a href="{{ url('/analysis') }}" class="boton-main">Analisis</a>
+                    <a href="{{ url('/analysis') }}" class="boton-main">Análisis</a>
                     <a href="{{ url('/help') }}" class="boton-main">Ayudas</a>
                     <a target="_blank" href="https://www.google.com/maps/place/Café+Bernabé+Gourmet/@4.637376,-75.5751544,16z/data=!4m13!1m7!3m6!1s0x8e388db58fdb7389:0x279e1388933e2000!2sSalento,+Quindío!3b1!8m2!3d4.637376!4d-75.570777!3m4!1s0x8e388db674ada243:0xc82724710847550a!8m2!3d4.6381142!4d-75.5680928">-Mapa</a>
                 </div>

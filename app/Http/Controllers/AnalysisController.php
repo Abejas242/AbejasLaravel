@@ -39,7 +39,7 @@ $variable = $_POST['fecha_ingresada'];
 
         $consulta1 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.Porcentaje_Humedad')
+                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.humedad')
                 ->DISTINCT()
                 ->where('clima_ambiente.fecha','=',$variable)
                 ->where('clima_ambiente.hora','>','00:00:00')
@@ -50,7 +50,7 @@ $variable = $_POST['fecha_ingresada'];
 
         $consulta2 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.Porcentaje_Humedad')
+                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.humedad')
                 ->DISTINCT()
                 ->where('clima_ambiente.fecha','=',$variable)
                 ->where('clima_ambiente.hora','>','06:00:00')
@@ -61,7 +61,7 @@ $variable = $_POST['fecha_ingresada'];
 
         $consulta3 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.Porcentaje_Humedad')
+                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.humedad')
                 ->DISTINCT()
                 ->where('clima_ambiente.fecha','=',$variable)
                 ->where('clima_ambiente.hora','>','12:00:00')
@@ -72,7 +72,7 @@ $variable = $_POST['fecha_ingresada'];
 
         $consulta4 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.Porcentaje_Humedad')
+                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.humedad')
                 ->DISTINCT()
                 ->where('clima_ambiente.fecha','=',$variable)
                 ->where('clima_ambiente.hora','>','18:00:00')
@@ -123,7 +123,7 @@ $variable = $_POST['fecha_ingresada'];
         foreach ($consulta1 as $c1) {
             $con1=  $c1->entrada;
             $con11=  $c1->temperatura;
-            $con111=  $c1->Porcentaje_Humedad;
+            $con111=  $c1->humedad;
         }
         $con2="";
         $con22="";
@@ -131,7 +131,7 @@ $variable = $_POST['fecha_ingresada'];
         foreach ($consulta2 as $c2) {
             $con2=  $c2->entrada;
             $con22=  $c2->temperatura;
-            $con222=  $c2->Porcentaje_Humedad;
+            $con222=  $c2->humedad;
         }
         $con3="";
         $con33="";
@@ -139,7 +139,7 @@ $variable = $_POST['fecha_ingresada'];
         foreach ($consulta3 as $c3) {
             $con3=  $c3->entrada;
             $con33=  $c3->temperatura;
-            $con333=  $c3->Porcentaje_Humedad;
+            $con333=  $c3->humedad;
         }
         $con4="";
         $con44="";
@@ -147,7 +147,7 @@ $variable = $_POST['fecha_ingresada'];
         foreach ($consulta4 as $c4) {
             $con4=  $c4->entrada;
             $con44=  $c4->temperatura;
-            $con444=  $c4->Porcentaje_Humedad;
+            $con444=  $c4->humedad;
         }       
         
       return view('analysis',compact('con1','con11','con111','con2','con22','con222','con3','con33','con333','con4','con44','con444','con5','con6','con7','con8'));
