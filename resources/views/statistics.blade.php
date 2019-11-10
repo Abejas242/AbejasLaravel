@@ -101,9 +101,9 @@
                 </fieldset>
             </div>
             
-            <div id="container" class="container" name="container" ><div>
+           
                     
-            <div class="grafica">
+            <div id="container" class="grafica">
                 <script type="text/javascript">
                 Highcharts.chart('container', {
                                 title: {
@@ -158,7 +158,7 @@
                                 responsive: {
                                     rules: [{
                                         condition: {
-                                            maxWidth: 500
+                                            maxWidth: 400
                                         },
                                         chartOptions: {
                                             legend: {
