@@ -71,11 +71,15 @@
                 </div>
     <?php 
         $apiario;
-        if(empty($apiario)){
-            $apiario = "No se encontro un apiario.";
+        if(isset($apiario)){
+            $apiario = "no ha sido buscado encontrado.";
+        }else if(empty($apiario)){
+            $apiario = "no fue encontrado.";
+        }else{
+            $apiario = "fue encontrado.";
         }
     ?>
-            <h3>{{ $apiario }}</h3>
+            <h3>El apiario {{ $apiario }}</h3>
             </form>
             
             
@@ -104,7 +108,7 @@
                                 <form action="{{url('/imprimirFranja2')}}">
                                     <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
                                 </form>
-                            </td>                        </tr>
+                            </td>                        
                         <tr>
                             <td>3</td>
                             <td>12pm - 18pm</td>
@@ -112,7 +116,7 @@
                                 <form action="{{url('/imprimirFranja3')}}">
                                     <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
                                 </form>
-                            </td>                        </tr>
+                            </td>                      
                         <tr>
                             <td>4</td>
                             <td>18pm - 0am</td>
