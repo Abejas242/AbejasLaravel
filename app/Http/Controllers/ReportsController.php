@@ -173,7 +173,7 @@ class ReportsController extends Controller
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
         ->where('clima_apiario.fecha','=',$fecha,'and',
-            'clima_apiario.hora','>=','18:00:00','and','clima_apiario.hora=11:59:59')
+            'clima_apiario.hora','>=','18:00:00','and','clima_apiario.hora','<=','23:59:59')
         ->get();
         
         if (empty($apiario) || (count($apiario) <= 1)) {
