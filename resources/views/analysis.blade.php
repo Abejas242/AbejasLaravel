@@ -109,7 +109,7 @@
     <div class="top-left">
         <div class="content">
             <div class="title m-b-md">
-                Analisis
+                Análisis
             </div>
         </div>
     </div>
