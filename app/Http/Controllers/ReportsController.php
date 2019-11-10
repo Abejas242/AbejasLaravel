@@ -44,7 +44,7 @@ class ReportsController extends Controller
                     ->get();
 
         if (empty($apiario)) {
-            return view('reports',compact('apiario'));
+            return view('/reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
             return $pdf->download('reporte-$fecha.pdf');
@@ -64,16 +64,16 @@ class ReportsController extends Controller
 
         $apiario = \DB::table('apiario')
         ->select("apiario.nombre",'actividad.entrada',
-        'actividad.salida',"ubicacion.url","users.name",
-        "clima_ambiente.temperatura as temperaturaAmb",
-        "clima_ambiente.humedad",
-        "clima_apiario.temperatura as temperaturaApi")
-    ->join('users','apiario.user_id','=','users.id')
-    ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
-    ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
-    ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
-    ->join('actividad','actividad.apiario_id','=','apiario.id')
-        ->where('clima_apiario.fecha','=',$fecha,'and',
+            'actividad.salida',"ubicacion.url","users.name",
+            "clima_ambiente.temperatura as temperaturaAmb",
+            "clima_ambiente.humedad",
+            "clima_apiario.temperatura as temperaturaApi")
+        ->join('users','apiario.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->join('actividad','actividad.apiario_id','=','apiario.id')
+            ->where('clima_apiario.fecha','=',$fecha,'and',
             'clima_apiario.hora','>=','00:00:00','and','clima_apiario.hora','<','06:00:00')
         ->get();
         
@@ -97,15 +97,15 @@ class ReportsController extends Controller
 
         $apiario = \DB::table('apiario')
         ->select("apiario.nombre",'actividad.entrada',
-                        'actividad.salida',"ubicacion.url","users.name",
-                        "clima_ambiente.temperatura as temperaturaAmb",
-                        "clima_ambiente.humedad",
-                        "clima_apiario.temperatura as temperaturaApi")
-                    ->join('users','apiario.user_id','=','users.id')
-                    ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
-                    ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
-                    ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
-                    ->join('actividad','actividad.apiario_id','=','apiario.id')
+            'actividad.salida',"ubicacion.url","users.name",
+            "clima_ambiente.temperatura as temperaturaAmb",
+            "clima_ambiente.humedad",
+            "clima_apiario.temperatura as temperaturaApi")
+        ->join('users','apiario.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->join('actividad','actividad.apiario_id','=','apiario.id')
         ->where('clima_apiario.fecha','=',$fecha,'and',
             'clima_apiario.hora','>=','06:00:00','and','clima_apiario.hora','<','12:00:00')
         ->get();
@@ -130,15 +130,15 @@ class ReportsController extends Controller
 
         $apiario = \DB::table('apiario')
         ->select("apiario.nombre",'actividad.entrada',
-                        'actividad.salida',"ubicacion.url","users.name",
-                        "clima_ambiente.temperatura as temperaturaAmb",
-                        "clima_ambiente.humedad",
-                        "clima_apiario.temperatura as temperaturaApi")
-                    ->join('users','apiario.user_id','=','users.id')
-                    ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
-                    ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
-                    ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
-                    ->join('actividad','actividad.apiario_id','=','apiario.id')
+            'actividad.salida',"ubicacion.url","users.name",
+            "clima_ambiente.temperatura as temperaturaAmb",
+            "clima_ambiente.humedad",
+            "clima_apiario.temperatura as temperaturaApi")
+        ->join('users','apiario.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->join('actividad','actividad.apiario_id','=','apiario.id')
         ->where('clima_apiario.fecha','=',$fecha,'and',
             'clima_apiario.hora','>=','12:00:00','and','clima_apiario.hora','<','18:00:00')
         ->get();
@@ -163,15 +163,15 @@ class ReportsController extends Controller
 
         $apiario = \DB::table('apiario')
         ->select("apiario.nombre",'actividad.entrada',
-        'actividad.salida',"ubicacion.url","users.name",
-        "clima_ambiente.temperatura as temperaturaAmb",
-        "clima_ambiente.humedad",
-        "clima_apiario.temperatura as temperaturaApi")
-    ->join('users','apiario.user_id','=','users.id')
-    ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
-    ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
-    ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
-    ->join('actividad','actividad.apiario_id','=','apiario.id')
+            'actividad.salida',"ubicacion.url","users.name",
+            "clima_ambiente.temperatura as temperaturaAmb",
+            "clima_ambiente.humedad",
+            "clima_apiario.temperatura as temperaturaApi")
+        ->join('users','apiarSio.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->join('actividad','actividad.apiario_id','=','apiario.id')
         ->where('clima_apiario.fecha','=',$fecha,'and',
             'clima_apiario.hora','>=','18:00:00','and','clima_apiario.hora=11:59:59')
         ->get();
