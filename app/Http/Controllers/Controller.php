@@ -12,31 +12,6 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
-    function imprimir(Request $request){
-
-        $fecha = $request-> input("fecha_ingresada");
-        $apiario = \DB::table('apiario')
-                    ->select("apiario.nombre",'actividad.entrada',
-                        'actividad.salida',"ubicacion.url","users.name",
-                        "clima_ambiente.temperatura as temperaturaAmb",
-                        "clima_ambiente.humedad as humedadAmb",
-                        "clima_apiario.temperatura as temperaturaApi")
-                    ->join('users','apiario.user_id','=','users.id')
-                    ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
-                    ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
-                    ->select('apiario.nombre','users.name','ubicacion.url')
-                    ->where('clima_apiario.fecha','=',$fecha)
-                    ->get();
-
-        if (isset($apiario)) {
-            $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-            return $pdf->download('ejemplo.pdf');
-        }else{
-            return view('reports',compact('apiario'));
-        }
-        
-    }
-
     function consultar(Request $request){
         $temperatura = $request->input("temperatura");
 
@@ -48,33 +23,6 @@ class Controller extends BaseController
          return view('statistics',compact('actividades'));
     }
 
-    function estimar(Request $request)
-    {
-        $temperatura = $request->input("temperatura");
-        $humedad = $request->input("humedad");
-        $actividadTotal = "0";
-
-        $estimacion = \DB::table('apiario')
-                        ->select('actividad.entrada','actividad.salida','apiario.id')
-                        ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
-                        ->join('actividad','actividad.apiario_id','=','apiario.id')
-                        ->where('clima_ambiente.temperatura','=',$temperatura, 
-                            'or', 'clima_ambiente.humedad','=',$humedad)
-                        ->get();
-
-        
-        foreach ($estimacion as $datos) {
-            $actividadParcial = (($datos->entrada) + ($datos->salida));
-            $actividadTotal = $actividadTotal + $actividadParcial;
-        }  
-
-        if (empty($estimacion)) {
-            $actividadTotal = "0";
-        }else{
-            
-            $actividadTotal = $actividadTotal/count($estimacion);
-        }
-        return view('estimates',compact('actividadTotal'));
-    }
+   
      
 }

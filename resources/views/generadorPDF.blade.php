@@ -8,6 +8,7 @@
         $usuario = $datos->name;
         $ubicacion = $datos->url;
     }
+
 ?>
     <head>
         <meta charset="UTF-8">

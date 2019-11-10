@@ -32,8 +32,12 @@ Route::post('/Statistics', 'StatisticsController@store');
 Route::post('/Analysis', 'AnalysisController@store');
 
 Route::name('consultar')->get('/consultar','Controller@consultar');
-Route::name('estimar')->get('/estimar','Controller@estimar');
-Route::name('imprimir')->get('/imprimir', 'Controller@imprimir');
+Route::name('estimar')->get('/estimar','EstimateController@estimar');
+Route::name('imprimirCompleto')->get('/imprimirCompleto', 'ReportsController@imprimirCompleto');
+Route::name('imprimirFranja1')->get('/imprimirFranja1', 'ReportsController@imprimirFranja1');
+Route::name('imprimirFranja2')->get('/imprimirFranja2', 'ReportsController@imprimirFranja2');
+Route::name('imprimirFranja3')->get('/imprimirFranja3', 'ReportsController@imprimirFranja3');
+Route::name('imprimirFranja4')->get('/imprimirFranja4', 'ReportsController@imprimirFranja4');
 
 
 

@@ -25,4 +25,152 @@ class ReportsController extends Controller
     {
         return view('reports');
     }
+
+    function imprimirCompleto(Request $request){
+
+        $fecha = $request-> input("fecha_ingresada");
+        $apiario = \DB::table('apiario')
+                    ->select("apiario.nombre",'actividad.entrada',
+                        'actividad.salida',"ubicacion.url","users.name",
+                        "clima_ambiente.temperatura as temperaturaAmb",
+                        "clima_ambiente.humedad as humedadAmb",
+                        "clima_apiario.temperatura as temperaturaApi")
+                    ->join('users','apiario.user_id','=','users.id')
+                    ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+                    ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+                    ->where('clima_apiario.fecha','=',$fecha)
+                    ->get();
+
+        if (isset($apiario)) {
+            $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
+            return $pdf->download('ejemplo.pdf');
+        }else{
+            return view('reports',compact('apiario'));
+        }
+        
+    }
+
+    /**
+     * Impresion de reporte para la franja 1 
+     *
+     * @param Request $request
+     * @return void
+     */
+    function imprimirFranja1(Request $request){
+
+        $fecha = $request-> input("fecha_ingresada");
+
+        $apiario = \DB::table('apiario')
+        ->select('apiario.nombre','actividad.entrada',
+            'actividad.salida','ubicacion.url','users.name',
+            'clima_ambiente.temperatura as temperaturaAmb',
+            'clima_ambiente.humedad as humedadAmb',
+            'clima_apiario.temperatura as temperaturaApi')
+        ->join('users','apiario.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->where('clima_apiario.fecha','=',$fecha,'and',
+            'clima_apiario.hora','>=','00:00:00','and','clima_apiario.hora','<','06:00:00')
+        ->get();
+        
+        if (isset($apiario)) {
+            $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
+            return $pdf->download('ejemplo.pdf');
+        }else{
+            return view('reports',compact('apiario', 'hora'));
+        }
+    }
+
+     /**
+     * Impresion de reporte para la franja 2
+     *
+     * @param Request $request
+     * @return void
+     */
+    function imprimirFranja2(Request $request){
+
+        $fecha = $request-> input("fecha_ingresada");
+
+        $apiario = \DB::table('apiario')
+        ->select('apiario.nombre','actividad.entrada',
+            'actividad.salida','ubicacion.url','users.name',
+            'clima_ambiente.temperatura as temperaturaAmb',
+            'clima_ambiente.humedad as humedadAmb',
+            'clima_apiario.temperatura as temperaturaApi')
+        ->join('users','apiario.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->where('clima_apiario.fecha','=',$fecha,'and',
+            'clima_apiario.hora','>=','06:00:00','and','clima_apiario.hora','<','12:00:00')
+        ->get();
+        
+        if (isset($apiario)) {
+            $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
+            return $pdf->download('ejemplo.pdf');
+        }else{
+            return view('reports',compact('apiario', 'hora'));
+        }
+    }
+
+     /**
+     * Impresion de reporte para la franja 3
+     *
+     * @param Request $request
+     * @return void
+     */
+    function imprimirFranja3(Request $request){
+
+        $fecha = $request-> input("fecha_ingresada");
+
+        $apiario = \DB::table('apiario')
+        ->select('apiario.nombre','actividad.entrada',
+            'actividad.salida','ubicacion.url','users.name',
+            'clima_ambiente.temperatura as temperaturaAmb',
+            'clima_ambiente.humedad as humedadAmb',
+            'clima_apiario.temperatura as temperaturaApi')
+        ->join('users','apiario.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->where('clima_apiario.fecha','=',$fecha,'and',
+            'clima_apiario.hora','>=','12:00:00','and','clima_apiario.hora','<','18:00:00')
+        ->get();
+        
+        if (isset($apiario)) {
+            $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
+            return $pdf->download('ejemplo.pdf');
+        }else{
+            return view('reports',compact('apiario', 'hora'));
+        }
+    }
+
+     /**
+     * Impresion de reporte para la franja 4
+     *
+     * @param Request $request
+     * @return void
+     */
+    function imprimirFranja4(Request $request){
+
+        $fecha = $request-> input("fecha_ingresada");
+
+        $apiario = \DB::table('apiario')
+        ->select('apiario.nombre','actividad.entrada',
+            'actividad.salida','ubicacion.url','users.name',
+            'clima_ambiente.temperatura as temperaturaAmb',
+            'clima_ambiente.humedad as humedadAmb',
+            'clima_apiario.temperatura as temperaturaApi')
+        ->join('users','apiario.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->where('clima_apiario.fecha','=',$fecha,'and',
+            'clima_apiario.hora','>=','18:00:00','and','clima_apiario.hora=11:59:59')
+        ->get();
+        
+        if (isset($apiario)) {
+            $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
+            return $pdf->download('ejemplo.pdf');
+        }else{
+            return view('reports',compact('apiario', 'hora'));
+        }
+    }
 }
