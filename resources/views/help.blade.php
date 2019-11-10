@@ -50,71 +50,7 @@
                 Ayudas
 
                 <script type="text/javascript">
-                     Highcharts.chart('container', {
-                                    title: {
-                                        text: 'Análisis estadístico de actividad'
-                                    },
-                                    xAxis: {
-                                        categories: ['12 am - 6 am', '6 am - 12 pm', '12 pm - 6 pm', '6 pm - 12 am']
-                                    },
-                                    labels: {
-                                        items: [{
-                                            html: 'Total actividad',
-                                            style: {
-                                                left: '70px',
-                                                top: '0px',
-                                                color: ( // theme
-                                                    Highcharts.defaultOptions.title.style &&
-                                                    Highcharts.defaultOptions.title.style.color
-                                                ) || 'black'
-                                            }
-                                        }]
-                                    },
-                                    series: [{
-                                        type: 'column',
-                                        name: 'Temperatura ambiente',
-                                        data: [3, 2, 1, 3]
-                                    }, {
-                                        type: 'column',
-                                        name: 'Humedad',
-                                        data: [2, 3, 5, 7]
-                                    }, {
-                                        type: 'column',
-                                        name: 'Temperatura colmena',
-                                        data: [4, 3, 3, 9]
-                                    }, {
-                                        type: 'spline',
-                                        name: 'Promedio',
-                                        data: [3, 2.67, 3, 6.33],
-                                        marker: {
-                                            lineWidth: 2,
-                                            lineColor: Highcharts.getOptions().colors[3],
-                                            fillColor: 'white'
-                                        }
-                                    }, {
-                                        type: 'pie',
-                                        name: 'Total',
-                                        data: [{
-                                            name: 'Temperatura ambiente',
-                                            y: 13,
-                                            color: Highcharts.getOptions().colors[0] // Jane's color
-                                        }, {
-                                            name: 'Humedad',
-                                            y: 23,
-                                            color: Highcharts.getOptions().colors[1] // John's color
-                                        }, {
-                                            name: 'Temperatura colmena',
-                                            y: 19,
-                                            color: Highcharts.getOptions().colors[2] // Joe's color
-                                        }],
-                                        center: [100, 50],
-                                        size: 100,
-                                        showInLegend: false,
-                                        dataLabels: {
-                                            enabled: false
-                                        }
-                                    }]
-                                });
+                    
                 </script>
             </div>
         </div>
