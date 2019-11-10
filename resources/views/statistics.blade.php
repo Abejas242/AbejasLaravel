@@ -84,15 +84,15 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <label name="temperatura">Temperatura</label>
                         <br>    
-                        <input type="text" name="temperatura" id="temperatura" placeholder="Ejemplo: 30" required="required">
+                        <input type="number" name="temperatura" id="temperatura" placeholder="Ejemplo: 30" required="required">
                         <br> <br>
                         <label name="humedad">Humedad</label>
                         <br>    
-                        <input type="text" name="humedad" id="humedad" placeholder="Ejemplo: 30" required="required">
+                        <input type="number" name="humedad" id="humedad" placeholder="Ejemplo: 30" required="required">
                         <br> <br>
                         <label name="temperatura-apiario">Temperatura del apiario</label>
                         <br>    
-                        <input type="text" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" required="required">
+                        <input type="number" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" required="required">
                         <br> <br>
                         <button type="submit" name="submit" class="boton-consulta">Ver</button>
                         <br><br>
