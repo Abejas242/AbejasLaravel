@@ -30,18 +30,18 @@ class ReportsController extends Controller
 
         $fecha = $request-> input("fecha_ingresada");
         $apiario = \DB::table('apiario')
-                    ->select("apiario.nombre",'actividad.entrada',
-                        'actividad.salida',"ubicacion.url","users.name",
-                        "clima_ambiente.temperatura as temperaturaAmb",
-                        "clima_ambiente.humedad",
-                        "clima_apiario.temperatura as temperaturaApi")
-                    ->join('users','apiario.user_id','=','users.id')
-                    ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
-                    ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
-                    ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
-                    ->join('actividad','actividad.apiario_id','=','apiario.id')
-                    ->where('clima_apiario.fecha','=',$fecha)
-                    ->get();
+        ->select("apiario.nombre",'actividad.entrada',
+            'actividad.salida',"ubicacion.url","users.name",
+            "clima_ambiente.temperatura as temperaturaAmb",
+            "clima_ambiente.humedad",
+            "clima_apiario.temperatura as temperaturaApi")
+        ->join('users','apiario.user_id','=','users.id')
+        ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
+        ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
+        ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
+        ->join('actividad','actividad.apiario_id','=','apiario.id')
+        ->where('clima_apiario.fecha','=',$fecha)
+        ->get();
 
         if (empty($apiario) || (count($apiario) <= 1)) {
             return view('/reports',compact('apiario'));
@@ -73,9 +73,9 @@ class ReportsController extends Controller
         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
-            ->where('clima_apiario.fecha','=',$fecha)
-            ->where('clima_apiario.hora','>','23:59:59')
-            ->where('clima_apiario.hora','<','06:00:00')
+        ->where('clima_apiario.fecha','=',$fecha)
+        ->where('clima_apiario.hora','>','23:59:59')
+        ->where('clima_apiario.hora','<','06:00:00')
         ->get();
         
         if (empty($apiario) || (count($apiario) <= 1)) {
@@ -97,19 +97,20 @@ class ReportsController extends Controller
         $fecha = $request-> input("fecha_ingresada");
 
         $apiario = \DB::table('apiario')
-        ->select("apiario.nombre",'actividad.entrada',
-            'actividad.salida',"ubicacion.url","users.name",
-            "clima_ambiente.temperatura as temperaturaAmb",
-            "clima_ambiente.humedad",
-            "clima_apiario.temperatura as temperaturaApi")
+        
         ->join('users','apiario.user_id','=','users.id')
         ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
+        ->select("apiario.nombre",'actividad.entrada',
+            'actividad.salida',"ubicacion.url","users.name",
+            "clima_ambiente.temperatura as temperaturaAmb",
+            "clima_ambiente.humedad",
+            "clima_apiario.temperatura as temperaturaApi")
         ->where('clima_apiario.fecha','=',$fecha)
-            ->where('clima_apiario.hora','>','05:59:59')
-            ->where('clima_apiario.hora','<','12:00:00')
+        ->where('clima_apiario.hora','>','05:59:59')
+        ->where('clima_apiario.hora','<','12:00:00')
         ->get();
         
         if (empty($apiario) || (count($apiario) <= 1)) {
@@ -176,8 +177,8 @@ class ReportsController extends Controller
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
         ->where('clima_apiario.fecha','=',$fecha)
-            ->where('clima_apiario.hora','>','17:59:59')
-            ->where('clima_apiario.hora','<','00:00:00')
+        ->where('clima_apiario.hora','>','17:59:59')
+        ->where('clima_apiario.hora','<','00:00:00')
         ->get();
         
         if (empty($apiario) || (count($apiario) <= 1)) {
