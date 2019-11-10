@@ -44,10 +44,12 @@ class ReportsController extends Controller
                     ->get();
 
         if (empty($apiario)) {
+            $apiario= "1";
             return view('/reports',compact('apiario'));
         }else{
-            $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-            return $pdf->download('reporte-$fecha.pdf');
+            $apiario ="2";
+            return view('/reports',compact('apiario'));
+            
         }
         
     }
