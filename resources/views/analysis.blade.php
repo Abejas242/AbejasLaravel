@@ -137,53 +137,31 @@
            
                 <div id="container" class="grafica">
                     <script type="text/javascript">
-                            Highcharts.chart('container', {
-                                    title: {
-                                        text: 'Análisis estadístico de actividad'
-                                    },
-                                    xAxis: {
-                                        categories: ['12 am - 6 am', '6 am - 12 pm', '12 pm - 6 pm', '6 pm - 12 am']
-                                    },
-                                    labels: {
-                                        items: [{
-                                            html: 'Total actividad',
-                                            style: {
-                                                left: '70px',
-                                                top: '0px',
-                                                color: ( // theme
-                                                    Highcharts.defaultOptions.title.style &&
-                                                    Highcharts.defaultOptions.title.style.color
-                                                ) || 'black'
-                                            }
-                                        }]
-                                    },
-                                    series: [{
-                                        type: 'column',
-                                        name: 'Actividad',
-                                        data: [<?php echo $con1 ?>, <?php echo $con2 ?>, <?php echo $con3 ?>, <?php echo $con4 ?>]
-                                    }, {
-                                        type: 'column',
-                                        name: 'Humedad',
-                                        data: [<?php echo $con111 ?>, <?php echo $con222 ?>, <?php echo $con333 ?>, <?php echo $con444 ?>]
-                                    },{
-                                        type: 'column',
-                                        name: 'Temperatura ambiente',
-                                        data: [<?php echo $con11 ?>, <?php echo $con22 ?>, <?php echo $con33 ?>, <?php echo $con44 ?>]
-                                    },{
-                                        type: 'column',
-                                        name: 'Temperatura colmena',
-                                        data: [<?php echo $con5 ?>, <?php echo $con6 ?>, <?php echo $con7 ?>, <?php echo $con8 ?>]
-                                    }, {
-                                        type: 'spline',
-                                        name: 'Promedio',
-                                        data: [1, 2.67, 3, 6.33],
-                                        marker: {
-                                            lineWidth: 2,
-                                            lineColor: Highcharts.getOptions().colors[3],
-                                            fillColor: 'white'
-                                        }
-                                    }]
-                                });
+                        Highcharts.chart('container', {
+                            title: {
+                                text: 'Análisis estadístico de actividad'
+                            },
+                            xAxis: {
+                                categories: ['12 am - 6 am', '6 am - 12 pm', '12 pm - 6 pm', '6 pm - 12 am']
+                            },
+                            series: [{
+                                type: 'column',
+                                name: 'Actividad',
+                                data: [<?php echo $con1 ?>, <?php echo $con2 ?>, <?php echo $con3 ?>, <?php echo $con4 ?>]
+                            }, {
+                                type: 'column',
+                                name: 'Humedad',
+                                data: [<?php echo $con111 ?>, <?php echo $con222 ?>, <?php echo $con333 ?>, <?php echo $con444 ?>]
+                            },{
+                                type: 'column',
+                                name: 'Temperatura ambiente',
+                                data: [<?php echo $con11 ?>, <?php echo $con22 ?>, <?php echo $con33 ?>, <?php echo $con44 ?>]
+                            },{
+                                type: 'column',
+                                name: 'Temperatura colmena',
+                                data: [<?php echo $con5 ?>, <?php echo $con6 ?>, <?php echo $con7 ?>, <?php echo $con8 ?>]
+                            }]
+                        });
                     </script>            
                 </div>
             </form>
