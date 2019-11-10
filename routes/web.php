@@ -35,7 +35,6 @@ Route::name('consultar')->get('/consultar','Controller@consultar');
 Route::name('estimar')->get('/estimar','Controller@estimar');
 Route::name('imprimir')->get('/imprimir', 'Controller@imprimir');
 
-Route::post('/Statistics', 'StatisticsController@store');
-Route::post('/Analysis', 'AnalysisController@store');
+
 
 Auth::routes();

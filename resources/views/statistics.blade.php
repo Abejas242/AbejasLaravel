@@ -59,9 +59,9 @@
         <div class="barra">
             <nav id="nav" class="navegacion-principal contenedor">
                 <a href="{{ url('/reports') }}">Reportes</a>
-                <a href="{{ url('/statistics') }}">Estadisticas</a>
+                <a href="{{ url('/statistics') }}">Estadísticas</a>
                 <a href="{{ url('/estimates') }}">Estimaciones</a>
-                <a href="{{ url('/analysis') }}">Analisis</a>
+                <a href="{{ url('/analysis') }}">Análisis</a>
                 <a href="{{ url('/help') }}">Ayudas</a>
             </nav>
         </div>
@@ -69,7 +69,7 @@
         <div class="top-left">
             <div class="content">
                 <div class="title m-b-md">
-                    Estadisticas
+                    Estadísticas
                 </div>
             </div>
         </div>
@@ -84,15 +84,15 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <label name="temperatura">Temperatura</label>
                         <br>    
-                        <input type="text" name="temperatura" id="temperatura" placeholder="Ejemplo: 30" required="required">
+                        <input type="number" name="temperatura" id="temperatura" placeholder="Ejemplo: 30" required="required">
                         <br> <br>
                         <label name="humedad">Humedad</label>
                         <br>    
-                        <input type="text" name="humedad" id="humedad" placeholder="Ejemplo: 30" required="required">
+                        <input type="number" name="humedad" id="humedad" placeholder="Ejemplo: 30" required="required">
                         <br> <br>
                         <label name="temperatura-apiario">Temperatura del apiario</label>
                         <br>    
-                        <input type="text" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" required="required">
+                        <input type="number" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" required="required">
                         <br> <br>
                         <button type="submit" name="submit" class="boton-consulta">Ver</button>
                         <br><br>
@@ -101,9 +101,9 @@
                 </fieldset>
             </div>
             
-            <div id="container" class="container" name="container" ><div>
+           
                     
-            <div class="grafica">
+            <div id="container" class="grafica">
                 <script type="text/javascript">
                 Highcharts.chart('container', {
                                 title: {
@@ -158,7 +158,7 @@
                                 responsive: {
                                     rules: [{
                                         condition: {
-                                            maxWidth: 500
+                                            maxWidth: 400
                                         },
                                         chartOptions: {
                                             legend: {
