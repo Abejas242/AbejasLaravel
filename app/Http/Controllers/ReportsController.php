@@ -176,7 +176,7 @@ class ReportsController extends Controller
             'clima_apiario.hora','>=','18:00:00','and','clima_apiario.hora','<=','23:59:59')
         ->get();
         
-        if (empty($apiario) || (count($apiario) == 0)) {
+        if (empty($apiario)) {
             return view('reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
