@@ -43,7 +43,7 @@ class ReportsController extends Controller
                     ->where('clima_apiario.fecha','=',$fecha)
                     ->get();
 
-        if (empty($apiario) && isset($apiario)) {
+        if (empty($apiario) && (count($apiario) != 0)) {
             return view('/reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
