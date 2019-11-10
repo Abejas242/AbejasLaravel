@@ -73,8 +73,9 @@ class ReportsController extends Controller
         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
-            ->where('clima_apiario.fecha','=',$fecha,'and',
-            'clima_apiario.hora','>=','00:00:00','and','clima_apiario.hora','<','06:00:00')
+            ->where('clima_apiario.fecha','=',$fecha)
+            ->where('clima_apiario.hora','>','23:59:59')
+            ->where('clima_apiario.hora','<','06:00:00')
         ->get();
         
         if (empty($apiario)) {
@@ -106,8 +107,9 @@ class ReportsController extends Controller
         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
-        ->where('clima_apiario.fecha','=',$fecha,'and',
-            'clima_apiario.hora','>=','06:00:00','and','clima_apiario.hora','<','12:00:00')
+        ->where('clima_apiario.fecha','=',$fecha)
+            ->where('clima_apiario.hora','>','05:59:59')
+            ->where('clima_apiario.hora','<','12:00:00')
         ->get();
         
         if (empty($apiario)) {
@@ -139,8 +141,9 @@ class ReportsController extends Controller
         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
-        ->where('clima_apiario.fecha','=',$fecha,'and',
-            'clima_apiario.hora','>=','12:00:00','and','clima_apiario.hora','<','18:00:00')
+        ->where('clima_apiario.fecha','=',$fecha)
+        ->where('clima_apiario.hora','>','11:59:59')
+        ->where('clima_apiario.hora','<','18:00:00')
         ->get();
         
         if (empty($apiario) || (count($apiario) <= 1)) {
@@ -172,8 +175,9 @@ class ReportsController extends Controller
         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
-        ->where('clima_apiario.fecha','=',$fecha,'and',
-            'clima_apiario.hora','>=','18:00:00','and','clima_apiario.hora','<=','23:59:59')
+        ->where('clima_apiario.fecha','=',$fecha)
+            ->where('clima_apiario.hora','>','17:59:59')
+            ->where('clima_apiario.hora','<','00:00:00')
         ->get();
         
         if (empty($apiario)) {
