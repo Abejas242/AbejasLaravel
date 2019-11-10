@@ -46,10 +46,10 @@ class StatisticsController extends Controller
                 ->where('clima_ambiente.temperatura','=',$variable)
                 ->get();
 
-        $consulta1=\DB::table('clima_ambiente')
+        $consulta2=\DB::table('clima_ambiente')
                 ->select('actividad.entrada')
                 ->join('actividad','actividad.apiario_id','=','clima_ambiente.apiario_id')
-                ->where('clima_ambiente."Porcentaje_Humedad"','=',$variable1)
+                ->where('clima_ambiente.humedad','=',$variable1)
                 ->get();
 
         $consulta3=\DB::table('clima_apiario')
@@ -65,6 +65,13 @@ class StatisticsController extends Controller
             $i1++;
            
         }
+        $con2=[];
+        $i2=0;
+        foreach ($consulta2 as $c2) {
+            $con2[$i2]=  $c2->entrada;
+            $i2++;
+           
+        }
         $con3=[];
         $i3=0;
         foreach ($consulta3 as $c3) {
@@ -73,7 +80,7 @@ class StatisticsController extends Controller
            
         }           
 
-    return view('statistics2',compact('con1','con3'));
+    return view('statistics',compact('con1','con3','con2'));
     
     }
 }

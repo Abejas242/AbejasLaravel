@@ -91,7 +91,7 @@
                     <br>
                     <div id="fechaContenedor" >
                         <label class="fecha" for="fecha">Fecha:</label>
-                        <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date">
+                        <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                         <br><br>
                         
                         <button type="submit" id="boton_general" class="boton-general">Ver gráfica</button>
@@ -99,24 +99,7 @@
                     </div>
 
                 </fieldset>
-                <br><br>
-                <div class="comentario">
-                <fieldset>
-                    <legend class="ayuda-legend">Agregar comentario</legend>
-                    <br>
-                        <form>
-                            <div class="com-izq">
-                                <textarea rows="10" cols="40"></textarea> 
-                                <br><br>                   
-                            </div>          
-                            <div class="com-der">
-                                <button id="Agregar" type="submit" class="boton-general ">Agregar</button>
-                                <br><br>
-                            </div>
-                        </form>
-                </fieldset>
-                
-        </div>   
+                <br><br> 
             </div>
            
                 <div id="container" class="grafica">
@@ -187,8 +170,6 @@
                                     }]
                                 });
                                                  
-
-                              
                     </script>            
                 </div>
             </form>
