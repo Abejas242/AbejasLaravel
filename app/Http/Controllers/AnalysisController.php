@@ -35,45 +35,121 @@ class AnalysisController extends Controller
 
     public function store(){
 
-        $variable = $_POST['fecha_ingresada'];    
+$variable = $_POST['fecha_ingresada'];    
 
-        $con = \DB::table('clima_ambiente')
+        $consulta1 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.entrada')
+                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.Porcentaje_Humedad')
                 ->DISTINCT()
                 ->where('clima_ambiente.fecha','=',$variable)
                 ->where('clima_ambiente.hora','>','00:00:00')
                 ->where('clima_ambiente.hora','<','06:00:00')
-                ->max('actividad.entrada');
+                ->orderBy('actividad.entrada','desc')
+                ->take(1)
+                ->get();
 
-        $con1 = \DB::table('clima_ambiente')
+        $consulta2 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.entrada')
+                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.Porcentaje_Humedad')
                 ->DISTINCT()
                 ->where('clima_ambiente.fecha','=',$variable)
                 ->where('clima_ambiente.hora','>','06:00:00')
                 ->where('clima_ambiente.hora','<','12:00:00')
-                ->max('actividad.entrada');
+                ->orderBy('actividad.entrada','desc')
+                ->take(1)
+                ->get();
 
-        $con2 = \DB::table('clima_ambiente')
+        $consulta3 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.entrada')
+                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.Porcentaje_Humedad')
                 ->DISTINCT()
                 ->where('clima_ambiente.fecha','=',$variable)
                 ->where('clima_ambiente.hora','>','12:00:00')
                 ->where('clima_ambiente.hora','<','18:00:00')
-                ->max('actividad.entrada');
+                ->orderBy('actividad.entrada','desc')
+                ->take(1)
+                ->get();
 
-        $con3 = \DB::table('clima_ambiente')
+        $consulta4 = \DB::table('clima_ambiente')
                 ->join('actividad','clima_ambiente.apiario_id','=','actividad.apiario_id')
-                ->select('actividad.entrada')
+                ->select('actividad.entrada','clima_ambiente.temperatura','clima_ambiente.Porcentaje_Humedad')
                 ->DISTINCT()
                 ->where('clima_ambiente.fecha','=',$variable)
                 ->where('clima_ambiente.hora','>','18:00:00')
                 ->where('clima_ambiente.hora','<','23:59:59')
-                ->max('actividad.entrada');
+                ->orderBy('actividad.entrada','desc')
+                ->take(1)
+                ->get();
 
+         $con5 = \DB::table('clima_apiario')
+                ->join('actividad','clima_apiario.apiario_id','=','actividad.apiario_id')
+                ->select('clima_apiario.temperatura')
+                ->DISTINCT()
+                ->where('clima_apiario.fecha','=',$variable)
+                ->where('clima_apiario.hora','>','00:00:00')
+                ->where('clima_apiario.hora','<','06:00:00')
+                ->max('clima_apiario.temperatura');
 
-      return view('analysis',compact('con','con1','con2','con3'));
+        $con6 = \DB::table('clima_apiario')
+                ->join('actividad','clima_apiario.apiario_id','=','actividad.apiario_id')
+                ->select('clima_apiario.temperatura')
+                ->DISTINCT()
+                ->where('clima_apiario.fecha','=',$variable)
+                ->where('clima_apiario.hora','>','06:00:00')
+                ->where('clima_apiario.hora','<','12:00:00')
+                ->max('clima_apiario.temperatura');
+
+        $con7 = \DB::table('clima_apiario')
+                ->join('actividad','clima_apiario.apiario_id','=','actividad.apiario_id')
+                ->select('actividad.entrada')
+                ->DISTINCT()
+                ->where('clima_apiario.fecha','=',$variable)
+                ->where('clima_apiario.hora','>','12:00:00')
+                ->where('clima_apiario.hora','<','18:00:00')
+                ->max('clima_apiario.temperatura');
+
+        $con8 = \DB::table('clima_apiario')
+                ->join('actividad','clima_apiario.apiario_id','=','actividad.apiario_id')
+                ->select('clima_apiario.temperatura')
+                ->DISTINCT()
+                ->where('clima_apiario.fecha','=',$variable)
+                ->where('clima_apiario.hora','>','18:00:00')
+                ->where('clima_apiario.hora','<','23:59:59')
+                ->max('clima_apiario.temperatura');
+
+        $con1="";
+        $con11="";
+        $con111="";      
+        foreach ($consulta1 as $c1) {
+            $con1=  $c1->entrada;
+            $con11=  $c1->temperatura;
+            $con111=  $c1->Porcentaje_Humedad;
+        }
+        $con2="";
+        $con22="";
+        $con222="";
+        foreach ($consulta2 as $c2) {
+            $con2=  $c2->entrada;
+            $con22=  $c2->temperatura;
+            $con222=  $c2->Porcentaje_Humedad;
+        }
+        $con3="";
+        $con33="";
+        $con333="";      
+        foreach ($consulta3 as $c3) {
+            $con3=  $c3->entrada;
+            $con33=  $c3->temperatura;
+            $con333=  $c3->Porcentaje_Humedad;
+        }
+        $con4="";
+        $con44="";
+        $con444="";
+        foreach ($consulta4 as $c4) {
+            $con4=  $c4->entrada;
+            $con44=  $c4->temperatura;
+            $con444=  $c4->Porcentaje_Humedad;
+        }       
+        
+      return view('analysis',compact('con1','con11','con111','con2','con22','con222','con3','con33','con333','con4','con44','con444','con5','con6','con7','con8'));
     } 
 }

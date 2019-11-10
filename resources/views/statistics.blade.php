@@ -37,7 +37,7 @@
     <body>
         <header>
             <div class="izq">
-                <h3 class="titulo">Bee Lab - Estadisticas</h3>
+                <h3 class="titulo">Bee Lab - Estadísticas</h3>
             </div>
             <div class="der">
                 @if (Route::has('login'))

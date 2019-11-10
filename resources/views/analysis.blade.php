@@ -1,20 +1,53 @@
 <!DOCTYPE html>
 <?php 
-    $con;
-    if (empty($con)) {
-        $con=0;
-    }
-    $con1;
+    
     if (empty($con1)) {
         $con1=0;
     }
-    $con2;
+    if (empty($con11)) {
+        $con11=0;
+    }
+    if (empty($con111)) {
+        $con111=0;
+    }
     if (empty($con2)) {
         $con2=0;
     }
-    $con3;
+    if (empty($con22)) {
+        $con22=0;
+    }
+    if (empty($con222)) {
+        $con222=0;
+    }
     if (empty($con3)) {
         $con3=0;
+    }
+    if (empty($con33)) {
+        $con33=0;
+    }
+    if (empty($con333)) {
+        $con333=0;
+    }
+    if (empty($con4)) {
+        $con4=0;
+    }
+    if (empty($con44)) {
+        $con44=0;
+    }
+    if (empty($con444)) {
+        $con444=0;
+    }
+    if (empty($con5)) {
+        $con5=0;
+    }
+    if (empty($con6)) {
+        $con6=0;
+    }
+    if (empty($con7)) {
+        $con7=0;
+    }
+    if (empty($con8)) {
+        $con8=0;
     }
 
 ?>
@@ -126,50 +159,31 @@
                                     },
                                     series: [{
                                         type: 'column',
-                                        name: 'Temperatura ambiente',
-                                        data: [<?php echo $con ?>, <?php echo $con1 ?>, <?php echo $con2 ?>, <?php echo $con3 ?>]
+                                        name: 'Actividad',
+                                        data: [<?php echo $con1 ?>, <?php echo $con2 ?>, <?php echo $con3 ?>, <?php echo $con4 ?>]
                                     }, {
                                         type: 'column',
                                         name: 'Humedad',
-                                        data: [2, 3, 5, 7]
-                                    }, {
+                                        data: [<?php echo $con111 ?>, <?php echo $con222 ?>, <?php echo $con333 ?>, <?php echo $con444 ?>]
+                                    },{
+                                        type: 'column',
+                                        name: 'Temperatura ambiente',
+                                        data: [<?php echo $con11 ?>, <?php echo $con22 ?>, <?php echo $con33 ?>, <?php echo $con44 ?>]
+                                    },{
                                         type: 'column',
                                         name: 'Temperatura colmena',
-                                        data: [2, 3, 3, 9]
+                                        data: [<?php echo $con5 ?>, <?php echo $con6 ?>, <?php echo $con7 ?>, <?php echo $con8 ?>]
                                     }, {
                                         type: 'spline',
                                         name: 'Promedio',
-                                        data: [2, 2.67, 3, 6.33],
+                                        data: [1, 2.67, 3, 6.33],
                                         marker: {
                                             lineWidth: 2,
                                             lineColor: Highcharts.getOptions().colors[3],
                                             fillColor: 'white'
                                         }
-                                    }, {
-                                        type: 'pie',
-                                        name: 'Total',
-                                        data: [{
-                                            name: 'Temperatura ambiente',
-                                            y: 13,
-                                            color: Highcharts.getOptions().colors[0] // Jane's color
-                                        }, {
-                                            name: 'Humedad',
-                                            y: 23,
-                                            color: Highcharts.getOptions().colors[1] // John's color
-                                        }, {
-                                            name: 'Temperatura colmena',
-                                            y: 19,
-                                            color: Highcharts.getOptions().colors[2] // Joe's color
-                                        }],
-                                        center: [100, 50],
-                                        size: 100,
-                                        showInLegend: false,
-                                        dataLabels: {
-                                            enabled: false
-                                        }
                                     }]
                                 });
-                                                 
                     </script>            
                 </div>
             </form>
