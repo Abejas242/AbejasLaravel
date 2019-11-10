@@ -5,7 +5,7 @@
         if(isset($apiario)){
             $apiario = "no ha sido encontrado.";
         }else if(empty($apiario)){
-            $apiario = "no ha sido buscado encontrado.";
+            $apiario = "no ha sido buscado.";
         }else{
             $apiario = "fue encontrado.";
         }        
@@ -76,6 +76,7 @@
                             <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                             <br><br>
                             <button type="submit"id="boton_general" class="boton-general">Exportar todo</button>
+                            <br><br>
                             <h3>El apiario {{ $apiario }}</h3>
                         </fieldset> 
                     </section> 

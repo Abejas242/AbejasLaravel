@@ -47,7 +47,7 @@ class ReportsController extends Controller
             return view('/reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-            return $pdf->download('reporte-',$fecha,'.pdf');
+            return $pdf->download('reporte.pdf');
         }
         
     }
@@ -81,7 +81,7 @@ class ReportsController extends Controller
             return view('reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-            return $pdf->download('reporte-$fecha-franja1.pdf');
+            return $pdf->download('reporte-franja1.pdf');
         }
     }
 
@@ -114,7 +114,7 @@ class ReportsController extends Controller
             return view('reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-            return $pdf->download('reporte-$fecha-franja2.pdf');
+            return $pdf->download('reporte-franja2.pdf');
         }
     }
 
@@ -147,7 +147,7 @@ class ReportsController extends Controller
             return view('reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-            return $pdf->download('reporte-$fecha-franja3.pdf');
+            return $pdf->download('reporte-franja3.pdf');
         }
     }
 
@@ -180,7 +180,7 @@ class ReportsController extends Controller
             return view('reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
-            return $pdf->download('reporte-',$fecha,'-franja4.pdf');
+            return $pdf->download('reporte-franja4.pdf');
         }
     }
 }
