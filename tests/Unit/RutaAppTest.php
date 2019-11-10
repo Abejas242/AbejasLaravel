@@ -11,7 +11,7 @@ class RutaAppTest extends TestCase
      *
      * @return void
      */
-    public function testRuta()
+    public function testRutaTest()
     {
     	$response = $this->call('GET','MiApp');
     	$this->assertResponseOk();
