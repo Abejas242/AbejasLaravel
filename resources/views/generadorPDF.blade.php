@@ -8,10 +8,6 @@
         $usuario = $datos->name;
         $ubicacion = $datos->url;
     }
-    $hora;
-    if(empty($hora)){
-        $hora = "Todo el dia";
-    }
 ?>
     <head>
         <meta charset="UTF-8">
@@ -24,7 +20,6 @@
         <header>
             <h1>Reporte de medición</h1>
             <h3>Seccion para la descripcion del documento.</h3>
-            <h4><?php echo $hora ?></h4>
         </header>
 
         <main>

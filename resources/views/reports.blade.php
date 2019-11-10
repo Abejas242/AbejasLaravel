@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+        $apiario;
+    
+        if(empty($apiario)){
+            $apiario = "no";
+        }
+?>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,6 +73,8 @@
                             <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                             <br><br>
                             <button type="submit"id="boton_general" class="boton-general">Exportar todo</button>
+                            <br><br>
+                            <h3>El apiario {{ $apiario }}</h3>
                         </fieldset> 
                     </section> 
                 </div>

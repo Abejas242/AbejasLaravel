@@ -43,7 +43,7 @@ class ReportsController extends Controller
                     ->where('clima_apiario.fecha','=',$fecha)
                     ->get();
 
-        if (empty($apiario) || (count($apiario) == 0)) {
+        if (empty($apiario)) {
             return view('/reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
@@ -77,7 +77,7 @@ class ReportsController extends Controller
             'clima_apiario.hora','>=','00:00:00','and','clima_apiario.hora','<','06:00:00')
         ->get();
         
-        if (empty($apiario) || (count($apiario) == 0)) {
+        if (empty($apiario)) {
             return view('reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
@@ -110,7 +110,7 @@ class ReportsController extends Controller
             'clima_apiario.hora','>=','06:00:00','and','clima_apiario.hora','<','12:00:00')
         ->get();
         
-        if (empty($apiario) || (count($apiario) == 0)) {
+        if (empty($apiario)) {
             return view('reports',compact('apiario'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
