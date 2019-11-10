@@ -7,10 +7,10 @@
 }
 
 .contenedor-datos{
-    float: left;
+     float: left;
     width: 30%;
-    padding: 0px 30px; 
-    padding-top: 0%;
+    padding: 10px 60px; 
+    padding-top: 6%;
     text-align: center;
 }
 
