@@ -8,10 +8,6 @@
         $usuario = $datos->nombreUsuario;
         $ubicacion = $datos->url;
     }
-    
-    $hora = '10am';
-    $var1= '5';
-    $var2= '10';
 ?>
     <head>
         <meta charset="UTF-8">

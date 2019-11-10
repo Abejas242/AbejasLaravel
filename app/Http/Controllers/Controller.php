@@ -68,7 +68,7 @@ class Controller extends BaseController
             $actividadTotal = $actividadTotal + $actividadParcial;
         }  
 
-        if (isset($estimacion)) {
+        if (empty($estimacion)) {
             $actividadTotal = $actividadTotal/count($estimacion);
         }else{
             $actividadTotal = "0";
