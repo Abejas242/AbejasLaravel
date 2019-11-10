@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php 
+        $apiario;
+        if(isset($apiario)){
+            $apiario = "no ha sido buscado encontrado.";
+        }else if(empty($apiario)){
+            $apiario = "no fue encontrado.";
+        }else{
+            $apiario = "fue encontrado.";
+        }        
+?>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -66,20 +76,10 @@
                             <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                             <br><br>
                             <button type="submit"id="boton_general" class="boton-general">Exportar todo</button>
+                            <h3>El apiario {{ $apiario }}</h3>
                         </fieldset> 
                     </section> 
                 </div>
-    <?php 
-        $apiario;
-        if(isset($apiario)){
-            $apiario = "no ha sido buscado encontrado.";
-        }else if(empty($apiario)){
-            $apiario = "no fue encontrado.";
-        }else{
-            $apiario = "fue encontrado.";
-        }
-    ?>
-            <h3>El apiario {{ $apiario }}</h3>
             </form>
             
             
