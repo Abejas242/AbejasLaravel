@@ -37,7 +37,7 @@ class ReportsController extends Controller
                         "clima_apiario.temperatura as temperaturaApi")
                     ->join('users','apiario.user_id','=','users.id')
                     ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
-                    ->join('clima_aambiente','clima_ambiente.apiario_id','=','apiario.id')
+                    ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
                     ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
                     ->join('actividad','actividad.apiario_id','=','apiario.id')
                     ->where('clima_apiario.fecha','=',$fecha)
