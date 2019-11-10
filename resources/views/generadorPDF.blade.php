@@ -62,16 +62,14 @@
                                     <th>Temperatura</th><th>Actividad</th>
                                 </tr>
                             </thead>
-                            <tr>
+                            
                             <?php foreach ($apiario as $datos) { ?>  
-                                <td><?php echo $datos->temperaturaApi ?></td> 
+                                <tr>
+                                    <td><?php echo $datos->temperaturaApi ?></td> 
+                                    <td><?php echo (($datos->entrada + $datos->salida)/2) ?></td> 
+                                </tr>
                             <?php } ?>  
-                            </tr>
-                            <tr>
-                            <?php foreach ($apiario as $datos) { ?>  
-                                <td><?php echo (($datos->entrada + $datos->salida)/2) ?></td> 
-                            <?php } ?>  
-                            </tr>
+                            
                     </table>
                     </fieldset>
 
@@ -87,17 +85,14 @@
                                 </tr>
                             </thead>
 
-                            <tr>
+                            
                             <?php foreach ($apiario as $datos) { ?>  
+                            <tr>
                                 <td><?php echo $datos->temperaturaAmb ?></td> 
-                            <?php } ?>  
-                            </tr>
-                            <tr>
-                            <?php foreach ($apiario as $datos) { ?>  
                                 <td><?php echo $datos->humedad ?></td> 
+                            </tr>
                             <?php } ?>  
-                            </tr>
-                            </tr>
+                            
                         </table>
                     </fieldset>
                 </div>
