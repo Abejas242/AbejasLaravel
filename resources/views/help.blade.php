@@ -53,6 +53,16 @@
                     
                 </script>
             </div>
+            <div>
+                <title>Reportes</title>>
+                <b3>
+                    Para la sección de reportes va a encontrar un formulario en el que debe ingresar una fecha y con esta tiene la posibilidad de observar alguna información con respecto a la actividad de las abejas en un apiario en un formato pdf que se descargará.
+                </b3>
+                <title>Estadísticas</title>>
+                <b3>
+                    La generación de estadísticas se realiza por medio de tres variables que tienden a ser las mas importantes para el análisis de la actividad de las abejas, Temperatura del ambiente, del apiario y la humedad, con esto, al ingresar los datos en el formulario pedido, se obtiene una gráfica con las estadísticas de actividad solicitadas, esta gráfica se puede descargar.
+                </b3>     
+            </div>
         </div>
     </div>
 
