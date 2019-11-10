@@ -3,9 +3,9 @@
 <?php 
         $apiario;
         if(isset($apiario)){
-            $apiario = "no ha sido buscado encontrado.";
+            $apiario = "no ha sido encontrado.";
         }else if(empty($apiario)){
-            $apiario = "no fue encontrado.";
+            $apiario = "no ha sido buscado encontrado.";
         }else{
             $apiario = "fue encontrado.";
         }        
