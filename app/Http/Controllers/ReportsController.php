@@ -167,7 +167,7 @@ class ReportsController extends Controller
             "clima_ambiente.temperatura as temperaturaAmb",
             "clima_ambiente.humedad",
             "clima_apiario.temperatura as temperaturaApi")
-        ->join('users','apiarSio.user_id','=','users.id')
+        ->join('users','apiario.user_id','=','users.id')
         ->join('ubicacion','apiario.ubicacion_id','=','ubicacion.id')
         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
