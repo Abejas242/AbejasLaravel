@@ -47,7 +47,6 @@ class ReportsController extends Controller
             $apiario= "1";
             return view('/reports',compact('apiario'));
         }else{
-            $apiario ="2";
             return view('/reports',compact('apiario'));
             
         }
