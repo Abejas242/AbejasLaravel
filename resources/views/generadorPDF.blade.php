@@ -4,8 +4,8 @@
 <?php 
     
     foreach ($apiario as $datos) {
-        $nombre =  $datos->nombreApiario;
-        $usuario = $datos->nombreUsuario;
+        $nombre =  $datos->nombre;
+        $usuario = $datos->name;
         $ubicacion = $datos->url;
     }
 ?>
