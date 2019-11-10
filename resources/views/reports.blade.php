@@ -78,7 +78,7 @@
             <h3>{{ $apiario }}</h3>
             </form>
             
-            <form action="{{url('/imprimirFranja')}}">
+            
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="reporte">
                     <table>
@@ -91,26 +91,40 @@
                         <tr>
                             <td>1</td>
                             <td>0am - 6am</td>
-                            <td><button id="boton_hora_1" type="submit" class="boton-real" onclick="imprimirfranja(1)">Exportar</button></td>
+                            <td>
+                                <form action="{{url('/imprimirFranja1')}}">
+                                    <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                                </form>
+                            </td>
                         </tr>
                         <tr>
                             <td>2</td>
                             <td>6am - 12pm</td>
-                            <td><button id="boton_hora_2" type="submit" class="boton-real" >Exportar</button></td></td>
-                        </tr>
+                            <td>
+                                <form action="{{url('/imprimirFranja2')}}">
+                                    <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                                </form>
+                            </td>                        </tr>
                         <tr>
                             <td>3</td>
                             <td>12pm - 18pm</td>
-                            <td><button id="boton_hora_3" type="submit" class="boton-real">Exportar</button></td></td>
-                        </tr>
+                            <td>
+                                <form action="{{url('/imprimirFranja3')}}">
+                                    <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                                </form>
+                            </td>                        </tr>
                         <tr>
                             <td>4</td>
                             <td>18pm - 0am</td>
-                            <td><button id="boton_hora_4" type="submit" class="boton-real">Exportar</button></td></td>
+                            <td>
+                                <form action="{{url('/imprimirFranja4')}}">
+                                    <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                                </form>
+                            </td>
                         </tr>
                     </table>
                 </div>
-            </form>
+           
               
         </main>
     
