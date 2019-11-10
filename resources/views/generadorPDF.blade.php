@@ -63,14 +63,14 @@
                                 </tr>
                             </thead>
                             <tr>
-                            <?php while($datos=$apiario->fetch_array()){ ?>  
-                                <td><?php echo $datos["temperaturaApi"] ?></td> 
+                            <?php foreach ($apiario as $datos) { ?>  
+                                <td><?php echo $datos->temperaturaApi ?></td> 
                             <?php } ?>  
                             </tr>
                             <tr>
-                            <?php while($datos=$apiario->fetch_array()){ ?>  
-                                <td><?php echo (($datos["entrada"] + $datos["salida"])/2) ?></td> 
-                            <?php } ?> 
+                            <?php foreach ($apiario as $datos) { ?>  
+                                <td><?php echo (($datos->entrada + $datos->salida)/2) ?></td> 
+                            <?php } ?>  
                             </tr>
                     </table>
                     </fieldset>
@@ -88,14 +88,14 @@
                             </thead>
 
                             <tr>
-                            <?php while($datos=$apiario->fetch_array()){ ?>  
-                                <td><?php echo $datos["temperaturaAmb"] ?></td> 
-                            <?php } ?> 
+                            <?php foreach ($apiario as $datos) { ?>  
+                                <td><?php echo $datos->temperaturaAmb ?></td> 
+                            <?php } ?>  
                             </tr>
                             <tr>
-                            <?php while($datos=$apiario->fetch_array()){ ?>  
-                                <td><?php echo $datos["humedad"] ?></td> 
-                            <?php } ?> 
+                            <?php foreach ($apiario as $datos) { ?>  
+                                <td><?php echo $datos->humedad ?></td> 
+                            <?php } ?>  
                             </tr>
                             </tr>
                         </table>
