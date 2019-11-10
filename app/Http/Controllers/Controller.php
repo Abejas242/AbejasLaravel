@@ -69,9 +69,10 @@ class Controller extends BaseController
         }  
 
         if (empty($estimacion)) {
-            $actividadTotal = $actividadTotal/count($estimacion);
-        }else{
             $actividadTotal = "0";
+        }else{
+            
+            $actividadTotal = $actividadTotal/count($estimacion);
         }
         return view('estimates',compact('actividadTotal'));
     }
