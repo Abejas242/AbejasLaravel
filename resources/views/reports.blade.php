@@ -57,7 +57,7 @@
         </div>
 
         <main> 
-            <form action="{{url('/imprimirCompleto')}}">
+            <form action="{{url('/imprimirFranja2')}}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="fecha-contenedor"> 
                     <section>
