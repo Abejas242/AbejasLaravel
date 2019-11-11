@@ -57,7 +57,7 @@
         </div>
 
         <main> 
-            <form action="{{url('/imprimirFranja2')}}">
+            <form action="{{url('/imprimirCompleto')}}">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <div class="fecha-contenedor"> 
                     <section>
@@ -74,53 +74,31 @@
             </form>
             
             
-                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                
                 <div class="reporte">
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>Id</th><th>Horario</th><th>Exportar a PDF</th>
-                            </tr>
-                        </thead>
-
-                        <tr>
-                            <td>1</td>
-                            <td>0am - 6am</td>
-                            <td>
-                                <form action="{{url('/imprimirCompleto')}}">
-                                    <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                                </form>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>6am - 12pm</td>
-                            <td>
-                                <form action="{{url('/imprimirFranja2')}}">
-                                    <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                                </form>
-                            </td>                        
-                        <tr>
-                            <td>3</td>
-                            <td>12pm - 18pm</td>
-                            <td>
-                                <form action="{{url('/imprimirFranja3')}}">
-                                    <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                                </form>
-                            </td>                      
-                        <tr>
-                            <td>4</td>
-                            <td>18pm - 0am</td>
-                            <td>
-                                <form action="{{url('/imprimirFranja4')}}">
-                                    <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                                </form>
-                            </td>
-                        </tr>
-                    </table>
+                    <fieldset>
+                        <legend>Seleccionar franja</legend>
+                        <form action="{{url('/imprimirCompleto')}}">
+                            <h3>Franja - 0am a 6am</h3>
+                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                        </form>
+                    
+                        <form action="{{url('/imprimirFranja2')}}">
+                            <h3>Franja - 6am a 12pm</h3>
+                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                        </form>
+                    
+                        <form action="{{url('/imprimirFranja3')}}">
+                            <h3>Franja - 12pm a 6pm</h3>
+                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                        </form>
+                    
+                        <form action="{{url('/imprimirFranja4')}}">
+                            <h3>Franja - 6pm a 0am</h3>
+                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                        </form>
+                    </fieldset>                 
                 </div>
-           
-              
         </main>
     
         <footer>
