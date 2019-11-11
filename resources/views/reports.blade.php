@@ -62,7 +62,7 @@
                 <div class="fecha-contenedor"> 
                     <section>
                         <fieldset class="fieldset"> 
-                            <legend class="leyenda">Fecha del apiario</legend>
+                            <legend class="leyenda">Reporte del dia</legend>
                             <label class="fecha" for="fecha">Fecha: </label>
                             <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                             <br><br>
@@ -77,26 +77,46 @@
                 
                 <div class="reporte">
                     <fieldset>
-                        <legend>Seleccionar franja</legend>
-                        <form action="{{url('/imprimirFranja1')}}">
-                            <h3>Franja - 0am a 6am</h3>
-                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                        </form>
+                        <legend>Reporte por franja</legend>
+                        <fieldset>
+                            <legend>Franja - 0am a 6am</legend>
+                            <form action="{{url('/imprimirFranja1')}}">
+                                <label class="fecha" for="fecha">Fecha: </label>
+                                <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                                <br><br>
+                                <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                            </form>
+                        </fieldset>
+                        
+                        <fieldset>
+                            <legend>Franja - 6am a 12pm</legend>
+                            <form action="{{url('/imprimirFranja2')}}">
+                                <label class="fecha" for="fecha">Fecha: </label>
+                                <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                                <br><br>
+                                <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                            </form>
+                        </fieldset>
                     
-                        <form action="{{url('/imprimirFranja2')}}">
-                            <h3>Franja - 6am a 12pm</h3>
-                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                        </form>
-                    
-                        <form action="{{url('/imprimirFranja3')}}">
-                            <h3>Franja - 12pm a 6pm</h3>
-                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                        </form>
-                    
-                        <form action="{{url('/imprimirFranja4')}}">
-                            <h3>Franja - 6pm a 0am</h3>
-                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                        </form>
+                        <fieldset>
+                            <legend>Franja - 12pm a 6pm</legend>
+                            <form action="{{url('/imprimirFranja3')}}">
+                                <label class="fecha" for="fecha">Fecha: </label>
+                                <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                                <br><br>
+                                <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                            </form>
+                        </fieldset>
+
+                         <fieldset>
+                            <legend>Franja - 6pm a 0am</legend>
+                            <form action="{{url('/imprimirFranja4')}}">
+                                <label class="fecha" for="fecha">Fecha: </label>
+                                <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                                <br><br>
+                                <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                            </form>
+                        </fieldset>
                     </fieldset>                 
                 </div>
             </form>
