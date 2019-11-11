@@ -71,14 +71,14 @@
                         </fieldset> 
                     </section> 
                 </div>
-            </form>
+            
             
             
                 
                 <div class="reporte">
                     <fieldset>
                         <legend>Seleccionar franja</legend>
-                        <form action="{{url('/imprimirCompleto')}}">
+                        <form action="{{url('/imprimirFranja1')}}">
                             <h3>Franja - 0am a 6am</h3>
                             <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
                         </form>
@@ -99,6 +99,7 @@
                         </form>
                     </fieldset>                 
                 </div>
+            </form>
         </main>
     
         <footer>
