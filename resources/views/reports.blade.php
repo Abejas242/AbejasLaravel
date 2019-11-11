@@ -71,56 +71,53 @@
                         </fieldset> 
                     </section> 
                 </div>
-            
-            
-            
-                
-                <div class="reporte">
-                    <fieldset class="fieldsetMayor">
-                        <legend>Reporte por franja</legend>
-
-                        <fieldset class="fieldsetMayor">
-                            <legend>Franja - 0am a 6am</legend>
-                            <form action="{{url('/imprimirFranja1')}}">
-                                <label class="fecha" for="fecha">Fecha: </label>
-                                <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
-                                <br><br>
-                                <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                            </form>
-                        </fieldset>
-                        
-                        <fieldset class="fieldsetMayor">
-                            <legend>Franja - 6am a 12pm</legend>
-                            <form action="{{url('/imprimirFranja2')}}">
-                                <label class="fecha" for="fecha">Fecha: </label>
-                                <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
-                                <br><br>
-                                <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                            </form>
-                        </fieldset>
-                    
-                        <fieldset class="fieldsetMayor">
-                            <legend>Franja - 12pm a 6pm</legend>
-                            <form action="{{url('/imprimirFranja3')}}">
-                                <label class="fecha" for="fecha">Fecha: </label>
-                                <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
-                                <br><br>
-                                <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                            </form>
-                        </fieldset>
-
-                         <fieldset class="fieldsetMayor">
-                            <legend>Franja - 6pm a 0am</legend>
-                            <form action="{{url('/imprimirFranja4')}}">
-                                <label class="fecha" for="fecha">Fecha: </label>
-                                <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
-                                <br><br>
-                                <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
-                            </form>
-                        </fieldset>
-                    </fieldset>                 
-                </div>
             </form>
+                
+            <div class="reporte">
+                <fieldset class="fieldsetMayor">
+                    <legend>Reporte por franja</legend>
+
+                    <fieldset class="fieldsetMayor">
+                        <legend>Franja - 0am a 6am</legend>
+                        <form action="{{url('/imprimirFranja1')}}">
+                            <label class="fecha" for="fecha">Fecha: </label>
+                            <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                            <br><br>
+                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                        </form>
+                    </fieldset>
+                    
+                    <fieldset class="fieldsetMayor">
+                        <legend>Franja - 6am a 12pm</legend>
+                        <form action="{{url('/imprimirFranja2')}}">
+                            <label class="fecha" for="fecha">Fecha: </label>
+                            <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                            <br><br>
+                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                        </form>
+                    </fieldset>
+                
+                    <fieldset class="fieldsetMayor">
+                        <legend>Franja - 12pm a 6pm</legend>
+                        <form action="{{url('/imprimirFranja3')}}">
+                            <label class="fecha" for="fecha">Fecha: </label>
+                            <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                            <br><br>
+                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                        </form>
+                    </fieldset>
+
+                        <fieldset class="fieldsetMayor">
+                        <legend>Franja - 6pm a 0am</legend>
+                        <form action="{{url('/imprimirFranja4')}}">
+                            <label class="fecha" for="fecha">Fecha: </label>
+                            <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
+                            <br><br>
+                            <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                        </form>
+                    </fieldset>
+                </fieldset>                 
+            </div>
         </main>
     
         <footer>
