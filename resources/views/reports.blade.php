@@ -87,7 +87,7 @@
                             <td>1</td>
                             <td>0am - 6am</td>
                             <td>
-                                <form action="{{url('/imprimirFranja1')}}">
+                                <form action="{{url('/imprimirCompleto')}}">
                                     <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
                                 </form>
                             </td>
