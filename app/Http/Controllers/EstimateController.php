@@ -37,6 +37,7 @@ class EstimateController extends Controller
         $temperatura = $request->input("temperatura");
         $humedad = $request->input("humedad");
         $actividadTotal = "0";
+        $enunciado;
 
         $estimacion = \DB::table('apiario')
                         ->select('actividad.entrada','actividad.salida','apiario.id')
@@ -54,9 +55,11 @@ class EstimateController extends Controller
 
         if (count($estimacion) >= 1) {
             $actividadTotal = $actividadTotal/count($estimacion);
+            $enunciado = 2;
         }else{
             $actividadTotal = "0"; 
+            $enunciado = 1;
         }
-        return view('estimates',compact('actividadTotal'));
+        return view('estimates',compact('actividadTotal','enunciado'));
     }
 }
