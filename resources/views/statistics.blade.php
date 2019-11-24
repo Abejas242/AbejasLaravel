@@ -62,7 +62,7 @@
         <div class="barra">
             <nav id="nav" class="navegacion-principal contenedor">
                 <a href="{{ url('/reports') }}">Reportes</a>
-                <a href="{{ url('/statistics') }}">Estadísticas</a>
+                <a href="{{ url('/statistics') }}">Estadisticas</a>
                 <a href="{{ url('/estimates') }}">Estimaciones</a>
                 <a href="{{ url('/analysis') }}">Analisis</a>
                 <a href="{{ url('/help') }}">Ayudas</a>
@@ -72,7 +72,7 @@
         <div class="top-left">
             <div class="content">
                 <div class="title m-b-md">
-                    Estadísticas
+                    Estadisticas
                 </div>
             </div>
         </div>
@@ -92,21 +92,21 @@
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <label name="temperatura">Temperatura (°C) </label>
                         <br>    
-                        <input type="text" name="temperatura" id="temperatura" placeholder="Ejemplo: 30" pattern="[0-9]+" title="Solo ingresar numeros." required>
+                        <input type="number" name="temperatura" id="temperatura" placeholder="Ejemplo: 30" title="Solo ingresar numeros enteros." required>
                         <br> <br>
                         <label name="humedad">Humedad (%)</label>
                         <br>    
-                        <input type="text" name="humedad" id="humedad" placeholder="Ejemplo: 30" pattern="[0-9]+" title="Solo ingresar numeros." required>
+                        <input type="number" name="humedad" id="humedad" placeholder="Ejemplo: 30" title="Solo ingresar numeros enteros." required>
                         <br> <br>
                         <label name="temperatura-apiario">Temperatura del apiario (°C) </label>
                         <br>    
-                        <input type="text" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" pattern="[0-9]+" title="Solo ingresar numeros." required>
+                        <input type="number" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" title="Solo ingresar numeros enteros." required>
                         <br> <br>
                         <button type="submit" name="submit" onclick="funcion();" class="boton-consulta">Ver</button>
                         <br><br>
                     </form>
                 </fieldset>
-                <br><br>
+                <br>
                 <label name="temperatura-apiario">{{$x}}</label>
                 <br><br>
 
@@ -132,12 +132,12 @@
             </script>
             <div id="container" class="container" name="container" ><div>
                     
-            <div class="grafica" id="grafica">
+            <div class="grafica">
                 <script type="text/javascript">
                 
 
 
-                Highcharts.chart('grafica', {
+                Highcharts.chart('container', {
                                 title: {
                                     text: 'Temperatura'
                                 },
