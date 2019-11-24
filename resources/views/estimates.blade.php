@@ -79,11 +79,7 @@
 <?php 
     $enunciado;
     if(empty($enunciado)){
-        $enunciado = " ";
-    }else if($enunciado = "1"){
-        $enunciado = "No se encontro apiarios con datos relacionados.";
-    }else if($enunciado = "2"){
-        $enunciado = "La actividad de las abejas con el clima ingresado es aproximadamente = {{ $actividadTotal }}";
+        $enunciado = ". ";
     }
 ?>
                         <h3>.{{ enunciado }}</h3>
