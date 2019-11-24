@@ -102,7 +102,7 @@
                         <br>    
                         <input type="number" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" title="Solo ingresar numeros enteros." required>
                         <br> <br>
-                        <button type="submit" name="submit" onclick="funcion();" class="boton-consulta">Ver</button>
+                        <button type="submit" name="submit" class="boton-consulta">Ver</button>
                         <br><br>
                     </form>
                 </fieldset>
@@ -130,14 +130,15 @@
                       });
                     }
             </script>
+
             <div id="container" class="container" name="container" ><div>
                     
-            <div class="grafica">
+            <div class="grafica" id="grafica">
                 <script type="text/javascript">
                 
 
 
-                Highcharts.chart('container', {
+                Highcharts.chart('grafica', {
                                 title: {
                                     text: 'Temperatura'
                                 },
