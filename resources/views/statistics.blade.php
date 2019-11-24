@@ -137,7 +137,7 @@
                 
 
 
-                Highcharts.chart('container', {
+                Highcharts.chart('grafica', {
                                 title: {
                                     text: 'Temperatura'
                                 },
