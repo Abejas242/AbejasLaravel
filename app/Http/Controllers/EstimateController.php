@@ -55,10 +55,10 @@ class EstimateController extends Controller
 
         if (count($estimacion) >= 1) {
             $actividadTotal = $actividadTotal/count($estimacion);
-            $enunciado = 2;
+            $enunciado = "2";
         }else{
             $actividadTotal = "0"; 
-            $enunciado = 1;
+            $enunciado = "1";
         }
         return view('estimates',compact('actividadTotal','enunciado'));
     }

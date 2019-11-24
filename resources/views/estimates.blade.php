@@ -86,7 +86,7 @@
         $enunciado = "La actividad de las abejas con el clima ingresado es aproximadamente = {{ $actividadTotal }}";
     }
 ?>
-                        <h3>{{ enunciado }}</h3>
+                        <h3>.{{ enunciado }}</h3>
                     </form>
                 </fieldset>
             </div>
