@@ -58,6 +58,6 @@ class EstimateController extends Controller
             
             $actividadTotal = $actividadTotal/count($estimacion);
         }
-        return view('estimates',compact('actividadTotal'));
+        return view('estimates',compact('estimacion'));
     }
 }
