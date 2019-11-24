@@ -52,12 +52,11 @@ class EstimateController extends Controller
             $actividadTotal = $actividadTotal + $actividadParcial;
         }  
 
-        if (empty($estimacion) || (count($estimacion) <= 1)) {
-            $actividadTotal = "0"; 
-        }else{
-            
+        if (count($estimacion) >= 1) {
             $actividadTotal = $actividadTotal/count($estimacion);
+        }else{
+            $actividadTotal = "0"; 
         }
-        return view('estimates',compact('estimacion'));
+        return view('estimates',compact('actividadTotal'));
     }
 }
