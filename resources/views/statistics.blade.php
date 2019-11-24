@@ -132,7 +132,7 @@
             </script>
             <div id="container" class="container" name="container" ><div>
                     
-            <div class="grafica">
+            <div class="grafica" id="grafica">
                 <script type="text/javascript">
                 
 
