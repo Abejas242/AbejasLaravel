@@ -20,7 +20,7 @@
         <header>
             <div class="izq">
                 <h3>Bee Lab - Estimaciones</h3>
-            </div>
+            </div> 
             <div class="der">
                 @if (Route::has('login'))
                 <div class="top-left links">
