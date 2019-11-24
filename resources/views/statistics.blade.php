@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <?php
-   
     if (empty($con1)) {
         $con1=[];
+    }
+
+    if (empty($con3)) {
+        $con3=[];
     }
     if (empty($con2)) {
         $con2=[];
     }
-    if (empty($con3)) {
-        $con3=[];
+    if (empty($x)) {
+        $x="";
     }
 ?>
 <html lang="en">
@@ -61,7 +64,7 @@
                 <a href="{{ url('/reports') }}">Reportes</a>
                 <a href="{{ url('/statistics') }}">Estadísticas</a>
                 <a href="{{ url('/estimates') }}">Estimaciones</a>
-                <a href="{{ url('/analysis') }}">Análisis</a>
+                <a href="{{ url('/analysis') }}">Analisis</a>
                 <a href="{{ url('/help') }}">Ayudas</a>
             </nav>
         </div>
@@ -77,34 +80,63 @@
         <main>
 
             <div class="datos">
+                 <button type="button" class="collapsible">Información</button>
+                <div class="content1">
+                  <p>En esta pagina se lograra evidenciar todos los registros de actividades relacionadas con cada una de las variables que se ingresen en el formulario.</p>
+                </div>
+                <br><br>
                 <fieldset class="datos-basicos" >
                     <legend>Datos basicos</legend>
                     
                     <form id="formulario" method="POST" action="{{url('Statistics')}}" > 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <label name="temperatura">Temperatura</label>
+                        <label name="temperatura">Temperatura (°C) </label>
                         <br>    
-                        <input type="number" name="temperatura" id="temperatura" placeholder="Ejemplo: 30" required="required">
+                        <input type="text" name="temperatura" id="temperatura" placeholder="Ejemplo: 30" pattern="[0-9]+" title="Solo ingresar numeros." required>
                         <br> <br>
-                        <label name="humedad">Humedad</label>
+                        <label name="humedad">Humedad (%)</label>
                         <br>    
-                        <input type="number" name="humedad" id="humedad" placeholder="Ejemplo: 30" required="required">
+                        <input type="text" name="humedad" id="humedad" placeholder="Ejemplo: 30" pattern="[0-9]+" title="Solo ingresar numeros." required>
                         <br> <br>
-                        <label name="temperatura-apiario">Temperatura del apiario</label>
+                        <label name="temperatura-apiario">Temperatura del apiario (°C) </label>
                         <br>    
-                        <input type="number" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" required="required">
+                        <input type="text" name="temperatura_apiario" id="apiario" placeholder="Ejemplo: 30" pattern="[0-9]+" title="Solo ingresar numeros." required>
                         <br> <br>
-                        <button type="submit" name="submit" class="boton-consulta">Ver</button>
+                        <button type="submit" name="submit" onclick="funcion();" class="boton-consulta">Ver</button>
                         <br><br>
-
                     </form>
                 </fieldset>
+                <br><br>
+                <label name="temperatura-apiario">{{$x}}</label>
+                <br><br>
+
+                
+
             </div>
-            
            
+            <script type="text/javascript">
+                var coll = document.getElementsByClassName("collapsible");
+                    var i;
+
+                    for (i = 0; i < coll.length; i++) {
+                      coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var content1 = this.nextElementSibling;
+                        if (content1.style.display === "block") {
+                          content1.style.display = "none";
+                        } else {
+                          content1.style.display = "block";
+                        }
+                      });
+                    }
+            </script>
+            <div id="container" class="container" name="container" ><div>
                     
-            <div id="container" class="grafica">
+            <div class="grafica">
                 <script type="text/javascript">
+                
+
+
                 Highcharts.chart('container', {
                                 title: {
                                     text: 'Temperatura'
@@ -158,7 +190,7 @@
                                 responsive: {
                                     rules: [{
                                         condition: {
-                                            maxWidth: 400
+                                            maxWidth: 500
                                         },
                                         chartOptions: {
                                             legend: {
@@ -168,6 +200,8 @@
                                     }]
                                 }
                             }); 
+
+
                 </script>
             </div>
         </main>

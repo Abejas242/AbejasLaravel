@@ -80,7 +80,35 @@ class StatisticsController extends Controller
            
         }           
 
-    return view('statistics',compact('con1','con3','con2'));
+    $x="";
+    
+
+    if (empty($con1)&&empty($con2)&&empty($con3)) {
+
+       $x="No existen registros de actividad relacionados con la datos ingresados";
+
+    }else if (empty($con1)&&empty($con2)) {
+            $x="No existen registros de 
+                actividad relacionados con la temperatura y humedad que ingresó";
+    }else if (empty($con1)&&empty($con3)) {
+            $x="No existen registros de 
+                actividad relacionados con la temperatura y temperatura del apiario 
+                que ingresó";
+    }else if (empty($con2)&&empty($con3)) {
+            $x="No existen registros de 
+                actividad relacionados con la temperatura del apiario y humedad que ingresó";
+    }else if (empty($con1)) {
+            $x="No existen registros de 
+                actividad relacionados con la temperatura que ingresó";
+    }else if (empty($con2)) {
+            $x="No existen registros de 
+                actividad relacionados con la humedad que ingresó";
+    }else if (empty($con3)) {
+            $x="No existen registros de 
+                actividad relacionados con la temperatura del apiario que ingresó";
+    }
+    
+    return view('statistics',compact('con1','con3','con2','x'));
     
     }
 }
