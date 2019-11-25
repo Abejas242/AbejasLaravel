@@ -183,12 +183,11 @@ class ReportsController extends Controller
         ->join('actividad','actividad.apiario_id','=','apiario.id')
         ->where('clima_apiario.fecha','=',$fecha)
         ->where('clima_apiario.hora','>','17:59:59')
-        ->where('clima_apiario.hora','<','00:00:00')
         ->get();
         
         if (empty($apiario) || (count($apiario) < 1)) {
             $x4 = "No se encontro apiarios con datos relacionados.";
-            return view('reports',compact('apiario'));
+            return view('reports',compact('x4'));
         }else{
             $pdf = \PDF::loadView('/generadorPDF',compact('apiario'));
             return $pdf->download('reporte-franja4.pdf');
