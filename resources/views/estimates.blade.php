@@ -77,11 +77,14 @@
                         <button type="submit" name="submit" class="submit" action="{{url('/estimar')}}" >Consultar</button>
                         <br><br>
 <?php 
+    $enunciado;
     if(empty($enunciado)){
-        $enunciado = ".";
+        $enunciado = "si";
+    }else{
+        $enunciado = "no";
     }
 ?>
-                        <h3>.{{ enunciado }}</h3>
+                        <h3>hh{{ enunciado }}</h3>
                     </form>
                 </fieldset>
             </div>
