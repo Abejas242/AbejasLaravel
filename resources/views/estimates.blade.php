@@ -20,7 +20,7 @@
         <header>
             <div class="izq">
                 <h3>Bee Lab - Estimaciones</h3>
-            </div>
+            </div> 
             <div class="der">
                 @if (Route::has('login'))
                 <div class="top-left links">
@@ -58,13 +58,13 @@
 
         <main>
             <div class="datos">
-            <p class="ayuda">Ingrese los datos del clima sobre el cual desea conocer la actividad de las abejas</p>
+            <p class="ayuda">Ingrese los datos del clima sobre el cual desea estimar la actividad de las abejas</p>
                 <fieldset class="datos-basicos" >
-                    <legend class="titulo-legend">Datos basicos</legend>
+                    <legend class="titulo-legend">Datos climaticos a ingr</legend>
                     
                     <form action="{{url('/estimar')}}" > 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <label name="temperatura">Temperatura</label>
+                        <label name="temperatura">Temperatura </label>
                         <br>    
                         <input type="text" name="temperatura" id="temperatura" placeholder="Ejemplo: 30"
                                 pattern="[0-9]+" title = "Solo ingresar numeros." required>
@@ -77,12 +77,12 @@
                         <button type="submit" name="submit" class="submit" action="{{url('/estimar')}}" >Consultar</button>
                         <br><br>
 <?php 
-    $actividadTotal;
-    if(empty($actividadTotal)){
-        $actividadTotal = "0";
+    $x;
+    if(empty($x)){
+        $x = " ";
     }
 ?>
-                        <h3>La actividad es aproximadamente = {{ $actividadTotal }}</h3>
+                        <h3> {{ $x }}</h3>
                     </form>
                 </fieldset>
             </div>
