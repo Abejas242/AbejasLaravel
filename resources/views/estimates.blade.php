@@ -79,10 +79,10 @@
 <?php 
     $enunciado;
     if(empty($enunciado)){
-        $enunciado = " ";
+        $enunciado = ".";
     }
 ?>
-                        <div class="">{ enunciado }</div>
+                        <h3>.{{ enunciado }}</h3>
                     </form>
                 </fieldset>
             </div>
