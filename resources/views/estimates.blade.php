@@ -60,18 +60,18 @@
             <div class="datos">
             <p class="ayuda">Ingrese los datos del clima sobre el cual desea estimar la actividad de las abejas</p>
                 <fieldset class="datos-basicos" >
-                    <legend class="titulo-legend">Datos climaticos a ingr</legend>
+                    <legend class="titulo-legend">Datos climaticos a ingresar</legend>
                     
                     <form action="{{url('/estimar')}}" > 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <label name="temperatura">Temperatura </label>
+                        <label name="temperatura">Temperatura (°C) </label>
                         <br>    
-                        <input type="text" name="temperatura" id="temperatura" placeholder="Ejemplo: 30"
+                        <input type="number" name="temperatura" id="temperatura" placeholder="Ejemplo: 30"
                                 pattern="[0-9]+" title = "Solo ingresar numeros." required>
                         <br> <br>
-                        <label name="humedad">Humedad</label>
+                        <label name="humedad">Humedad (%)</label>
                         <br>    
-                        <input type="text" name="humedad" id="humedad" placeholder="Ejemplo: 30"  
+                        <input type="number" name="humedad" id="humedad" placeholder="Ejemplo: 30"  
                             pattern="[0-9]+" title = "Solo ingresar numeros." required>
                         <br> <br>
                         <button type="submit" name="submit" class="submit" action="{{url('/estimar')}}" >Consultar</button>
