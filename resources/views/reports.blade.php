@@ -71,6 +71,13 @@
                         </fieldset> 
                     </section> 
                 </div>
+                <?php 
+    $x;
+    if(empty($x)){
+        $x = " ";
+    }
+?>
+                        <h3> {{ $x }}</h3>
             </form>
                 
             <div class="reporte">
@@ -84,6 +91,13 @@
                             <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                             <br><br>
                             <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                            <?php 
+    $x1;
+    if(empty($x1)){
+        $x1 = " ";
+    }
+?>
+                        <h3> {{ $x1 }}</h3>
                         </form>
                     </fieldset>
                     
@@ -94,6 +108,13 @@
                             <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                             <br><br>
                             <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                            <?php 
+    $x2;
+    if(empty($x2)){
+        $x2 = " ";
+    }
+?>
+                        <h3> {{ $x2 }}</h3>
                         </form>
                     </fieldset>
                 
@@ -104,6 +125,13 @@
                             <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                             <br><br>
                             <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                            <?php 
+    $x3;
+    if(empty($x3)){
+        $x3 = " ";
+    }
+?>
+                        <h3> {{ $x3 }}</h3>
                         </form>
                     </fieldset>
 
@@ -114,6 +142,13 @@
                             <input class="fecha" name="fecha_ingresada" id="fecha_ingresada" type="date" required>
                             <br><br>
                             <button id="boton_hora_1" type="submit" class="boton-real">Exportar</button>
+                            <?php 
+    $x4;
+    if(empty($x4)){
+        $x4 = " ";
+    }
+?>
+                        <h3> {{ $x4 }}</h3>
                         </form>
                     </fieldset>
                 </fieldset>                 
