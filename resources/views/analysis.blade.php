@@ -49,6 +49,9 @@
     if (empty($con8)) {
         $con8=0;
     }
+    if (empty($x)) {
+        $x="";
+    }
 
 ?>
 <html lang="en">
@@ -119,6 +122,11 @@
             <form action="{{url('/Analysis')}}" method="POST" >
 
             <div class="contenedor-datos">
+                <button type="button" class="collapsible">Información</button>
+                <div class="content1">
+                  <p>En esta sección, usted podrá ingresar una fecha específica, en donde, con base en esta, se observará en la gráfica, el registro de actividad de la abeja, la temperatura del ambiente, el porcentaje de humedad y la temperatura de la colmena.</p>
+                </div>
+                <br><br>
                 <fieldset>
                     <legend class="ayuda-legend">Buscar fecha y graficar</legend>
                     <br>
@@ -133,7 +141,25 @@
 
                 </fieldset>
                 <br><br> 
+                <label name="infromacion">{{$x}}</label>
+                <br><br>
             </div>
+            <script type="text/javascript">
+                var coll = document.getElementsByClassName("collapsible");
+                var i;
+
+                for (i = 0; i < coll.length; i++) {
+                  coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    var content1 = this.nextElementSibling;
+                    if (content1.style.display === "block") {
+                      content1.style.display = "none";
+                    } else {
+                      content1.style.display = "block";
+                    }
+                  });
+                }
+            </script>
            
                 <div id="container" class="grafica">
                     <script type="text/javascript">
