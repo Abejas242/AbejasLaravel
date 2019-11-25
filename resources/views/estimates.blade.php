@@ -77,7 +77,6 @@
                         <button type="submit" name="submit" class="submit" action="{{url('/estimar')}}" >Consultar</button>
                         <br><br>
 <?php 
-    $enunciado;
     if(empty($enunciado)){
         $enunciado = ".";
     }
