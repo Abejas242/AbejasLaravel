@@ -55,7 +55,7 @@ class EstimateController extends Controller
 
         if (count($estimacion) >= 1) {
             $actividadTotal = $actividadTotal/count($estimacion);
-            $x = "La actividad de las abejas con el clima ingresado es aproximadamente = {{ $actividadTotal }}";
+            $x = "La actividad de las abejas con el clima ingresado es aproximadamente = $actividadTotal ";
         }else{
             $actividadTotal = "0"; 
             $x = "No se encontro apiarios con datos relacionados.";
