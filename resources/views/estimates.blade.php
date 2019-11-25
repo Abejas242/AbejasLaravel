@@ -82,7 +82,7 @@
         $x = "0";
     }
 ?>
-                        <h3>La actividad es aproximadamente = {{ $x }}</h3>
+                        <h3> {{ $x }}</h3>
                     </form>
                 </fieldset>
             </div>
