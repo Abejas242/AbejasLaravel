@@ -79,9 +79,7 @@
                                         Ingresar
                                     </button>
                                     <br>
-                                    <a class="btn btn-link" href="{{ url('/password/reset') }}">
-                                        ¿No recuerda la contraseña?
-                                    </a>
+                                    
                                 </div>
                             </div>
             </div>
