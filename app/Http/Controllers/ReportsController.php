@@ -80,7 +80,7 @@ class ReportsController extends Controller
         ->where('clima_apiario.hora','<','06:00:00')
         ->get();
         
-        if (empty($apiario) || (count($apiario) <= 1)) {
+        if (empty($apiario) || (count($apiario) < 1)) {
             $x1 = "No se encontro apiarios con datos relacionados.";
             return view('reports',compact('x1'));
         }else{
@@ -116,7 +116,7 @@ class ReportsController extends Controller
         ->where('clima_apiario.hora','<','12:00:00')
         ->get();
         
-        if (empty($apiario) || (count($apiario) <= 1)) {
+        if (empty($apiario) || (count($apiario) < 1)) {
             $x2 = "No se encontro apiarios con datos relacionados.";
             return view('reports',compact('x2'));
         }else{
@@ -151,7 +151,7 @@ class ReportsController extends Controller
         ->where('clima_apiario.hora','<','18:00:00')
         ->get();
         
-        if (empty($apiario) || (count($apiario) <= 1)) {
+        if (empty($apiario) || (count($apiario) < 1)) {
             $x3 = "No se encontro apiarios con datos relacionados.";
             return view('reports',compact('x3'));
         }else{
@@ -186,7 +186,7 @@ class ReportsController extends Controller
         ->where('clima_apiario.hora','<','00:00:00')
         ->get();
         
-        if (empty($apiario) || (count($apiario) <= 1)) {
+        if (empty($apiario) || (count($apiario) < 1)) {
             $x4 = "No se encontro apiarios con datos relacionados.";
             return view('reports',compact('apiario'));
         }else{
