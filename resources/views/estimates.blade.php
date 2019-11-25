@@ -60,7 +60,7 @@
             <div class="datos">
             <p class="ayuda">Ingrese los datos del clima sobre el cual desea estimar la actividad de las abejas</p>
                 <fieldset class="datos-basicos" >
-                    <legend class="titulo-legend">Datos climaticos a ingresar</legend>
+                    <legend class="titulo-legend">Datos climaticos a ingr</legend>
                     
                     <form action="{{url('/estimar')}}" > 
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -77,14 +77,12 @@
                         <button type="submit" name="submit" class="submit" action="{{url('/estimar')}}" >Consultar</button>
                         <br><br>
 <?php 
-    $enunciado;
-    if(empty($enunciado)){
-        $enunciado = "si";
-    }else{
-        $enunciado = "no";
+    $x;
+    if(empty($x)){
+        $x = "0";
     }
 ?>
-                        <h3>hh{{ enunciado }}</h3>
+                        <h3>La actividad es aproximadamente = {{ $x }}</h3>
                     </form>
                 </fieldset>
             </div>
