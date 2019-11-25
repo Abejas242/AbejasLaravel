@@ -76,7 +76,7 @@ class ReportsController extends Controller
         ->join('clima_apiario','clima_apiario.apiario_id','=','apiario.id')
         ->join('actividad','actividad.apiario_id','=','apiario.id')
         ->where('clima_apiario.fecha','=',$fecha)
-        ->where('clima_apiario.hora','>','23:59:59')
+        ->where('clima_apiario.hora','>','00:00:00')
         ->where('clima_apiario.hora','<','06:00:00')
         ->get();
         
