@@ -148,8 +148,44 @@ $variable = $_POST['fecha_ingresada'];
             $con4=  $c4->entrada;
             $con44=  $c4->temperatura;
             $con444=  $c4->humedad;
-        }       
+        }
+
+        $x="";
+    
+
+        if (sizeof($consulta1)<1&&sizeof($consulta2)<1&&sizeof($consulta3)<1&&sizeof($consulta4)<1) {
+
+            if (empty($con5)&&empty($con6)&&empty($con7)&&empty($con8)) {
+
+                $x="No existen registros relacionados con la fecha ingresada, intente con otra fecha.";
+
+            }else{
+                $x="Solo existe registro de la temperatura de la colmena en base a la fecha ingresada";
+            }
+        }else if (empty($con5)&&empty($con6)&&empty($con7)&&empty($con8)) {
+
+           $x="No existen registros relacionados con el clima del apiario, en base a la fecha ingresada.";
+
+        }
+
+        $fecha_actual = date("Y-m-d");
+      
+        if ($fecha_actual>$variable) {
+            return view('analysis',compact('con1','con11','con111','con2','con22','con222','con3','con33','con333','con4','con44','con444','con5','con6','con7','con8','x'));
+        }else{
+            $x="No es posible realizar el proceso debido a que la fecha ingresada es mayor a la actual";
+            $consulta1="";
+            $consulta2="";
+            $consulta3="";
+            $consulta4="";
+            $con5="";
+            $con6="";
+            $con7="";
+            $con8="";
+
+            return view('analysis',compact('con1','con11','con111','con2','con22','con222','con3','con33','con333','con4','con44','con444','con5','con6','con7','con8','x'));
+        }     
         
-      return view('analysis',compact('con1','con11','con111','con2','con22','con222','con3','con33','con333','con4','con44','con444','con5','con6','con7','con8'));
+      //return view('analysis',compact('con1','con11','con111','con2','con22','con222','con3','con33','con333','con4','con44','con444','con5','con6','con7','con8','x'));
     } 
 }

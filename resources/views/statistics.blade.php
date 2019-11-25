@@ -80,9 +80,9 @@
         <main>
 
             <div class="datos">
-                 <button type="button" class="collapsible">Información</button>
+                <button type="button" class="collapsible">Información</button>
                 <div class="content1">
-                  <p>En esta pagina se lograra evidenciar todos los registros de actividades relacionadas con cada una de las variables que se ingresen en el formulario.</p>
+                  <p>En esta sección, deberá ingresar los datos requeridos en el formulario, y con base en estos, se presentara una grafica, que registra todas las actividades encontradas en relación a los datos que se ingresaron. Cada punto en la grafica, representa la actividad.</p>
                 </div>
                 <br><br>
                 <fieldset class="datos-basicos" >
@@ -107,7 +107,7 @@
                     </form>
                 </fieldset>
                 <br>
-                <label name="temperatura-apiario">{{$x}}</label>
+                <label name="informacion">{{$x}}</label>
                 <br><br>
 
                 
@@ -140,7 +140,7 @@
 
                 Highcharts.chart('grafica', {
                                 title: {
-                                    text: 'Temperatura'
+                                    text: 'Actividad'
                                 },
                     
                                 yAxis: {
@@ -160,7 +160,7 @@
                                     }
                                 },
                                 series: [{
-                                    name: 'Temperatura',
+                                    name: 'Temperatura-Actividad',
                                     data: [
                                         
                                         <?php foreach ($con1 as $c1): ?>
@@ -170,14 +170,14 @@
                                         
                                     ]
                                 },{
-                                    name: 'Humedad',
+                                    name: 'Humedad-Actividad',
                                     data: [
                                         <?php foreach ($con2 as $c2): ?>
                                         [<?php echo $c2 ?>],
                                         <?php endforeach ?>
                                     ]
                                 },{
-                                    name: 'Temperatura apiario',
+                                    name: 'Temperatura apiario-Actividad',
                                     data: [
                                         
                                         
