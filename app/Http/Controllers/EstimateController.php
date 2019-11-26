@@ -39,8 +39,10 @@ class EstimateController extends Controller
         $actividadTotal = "0";
         $x;
 
-        if ($temperatura >= 0 || $humedad >= 0){
-            $estimacion = \DB::table('apiario')
+        if ($temperatura >= 0 && $humedad >= 0){
+            if ($temperatura >= 0) {
+                if ($humedad >=0) {
+                    $estimacion = \DB::table('apiario')
                         ->select('actividad.entrada','actividad.salida','apiario.id')
                         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
                         ->join('actividad','actividad.apiario_id','=','apiario.id')
@@ -48,22 +50,27 @@ class EstimateController extends Controller
                             'or', 'clima_ambiente.humedad','=',$humedad)
                         ->get();
 
-        
-            foreach ($estimacion as $datos) {
-                $actividadParcial = (($datos->entrada) + ($datos->salida));
-                $actividadTotal = $actividadTotal + $actividadParcial;
-            }  
+                
+                    foreach ($estimacion as $datos) {
+                        $actividadParcial = (($datos->entrada) + ($datos->salida));
+                        $actividadTotal = $actividadTotal + $actividadParcial;
+                    }  
 
-            if (count($estimacion) >= 1) {
-                $actividadTotal = $actividadTotal/count($estimacion);
-                $x = "La actividad de las abejas con el clima ingresado es aproximadamente = $actividadTotal ";
+                    if (count($estimacion) >= 1) {
+                        $actividadTotal = $actividadTotal/count($estimacion);
+                        $x = "La actividad de las abejas con el clima ingresado es aproximadamente = $actividadTotal ";
+                    }else{
+                        $actividadTotal = "0"; 
+                        $x = "No se encontro apiarios con datos relacionados.";
+                    }
+                }else{
+                    $x = "La humedad debe ser positiva.";
+                }
             }else{
-                $actividadTotal = "0"; 
-                $x = "No se encontro apiarios con datos relacionados.";
+                $x = "La temperatura debe ser positiva";
             }
         }else{
-            $x = "Alguno de los datos ingresados es negativo.";
-
+            $x = "Alguno de los datos ingresados es negativo deben ser positivos.";
         }
         return view('estimates',compact('x'));
     }
