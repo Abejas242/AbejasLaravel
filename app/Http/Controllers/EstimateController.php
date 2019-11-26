@@ -39,7 +39,7 @@ class EstimateController extends Controller
         $actividadTotal = "0";
         $x;
 
-        if ($temperatura >= 0 && $humedad >= 0){
+        if ($temperatura >= 0 || $humedad >= 0){
             if ($temperatura >= 0) {
                 if ($humedad >=0) {
                     $estimacion = \DB::table('apiario')
