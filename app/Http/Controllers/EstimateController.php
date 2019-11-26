@@ -39,7 +39,8 @@ class EstimateController extends Controller
         $actividadTotal = "0";
         $x;
 
-        $estimacion = \DB::table('apiario')
+        if ($temperatura >= 0 || $humedad >= 0){
+            $estimacion = \DB::table('apiario')
                         ->select('actividad.entrada','actividad.salida','apiario.id')
                         ->join('clima_ambiente','clima_ambiente.apiario_id','=','apiario.id')
                         ->join('actividad','actividad.apiario_id','=','apiario.id')
@@ -48,17 +49,21 @@ class EstimateController extends Controller
                         ->get();
 
         
-        foreach ($estimacion as $datos) {
-            $actividadParcial = (($datos->entrada) + ($datos->salida));
-            $actividadTotal = $actividadTotal + $actividadParcial;
-        }  
+            foreach ($estimacion as $datos) {
+                $actividadParcial = (($datos->entrada) + ($datos->salida));
+                $actividadTotal = $actividadTotal + $actividadParcial;
+            }  
 
-        if (count($estimacion) >= 1) {
-            $actividadTotal = $actividadTotal/count($estimacion);
-            $x = "La actividad de las abejas con el clima ingresado es aproximadamente = $actividadTotal ";
+            if (count($estimacion) >= 1) {
+                $actividadTotal = $actividadTotal/count($estimacion);
+                $x = "La actividad de las abejas con el clima ingresado es aproximadamente = $actividadTotal ";
+            }else{
+                $actividadTotal = "0"; 
+                $x = "No se encontro apiarios con datos relacionados.";
+            }
         }else{
-            $actividadTotal = "0"; 
-            $x = "No se encontro apiarios con datos relacionados.";
+            $x = "Alguno de los datos ingresados es negativo.";
+
         }
         return view('estimates',compact('x'));
     }

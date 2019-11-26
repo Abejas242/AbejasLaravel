@@ -52,30 +52,30 @@ fieldset{
 }
 
 .collapsible {
-  background-color: #636363;
-  color: #fff;
-  cursor:help;
-  padding: 18px;
-  width: 100%;
-  border:black;
-  text-align: left;
-  outline:black;
-  font-size: 15px;
+    background-color: #ffffff;
+    color: #000;
+    cursor: help;
+    padding: 18px;
+    width: 100%;
+    border: #c12727;
+    text-align: left;
+    outline: black;
+    font-size: 15px;
+    border-radius: 5%;
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .active, .collapsible:hover {
-  background-color: #424242;
+  background-color: #ffffff;
 }
 
 /* Style the collapsible content. Note: hidden by default */
 .content1 {
-  background-color: #6d6d6d;
-  padding: 0 18px;
-  display:none;
-  overflow: hidden;
-  color:#ffffff;
-  text-align:-webkit-left
-  
-
+    background-color: #eae4e4;
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    color: #000000;
+    text-align: -webkit-left;
+    font-weight: bold;
 }
