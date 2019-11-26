@@ -62,19 +62,19 @@
             <div>
                 <h1>Estadísticas</h1>>
                 <h3>
-                    La generación de estadísticas se realiza por medio de tres variables que tienden a ser las mas importantes para el análisis de la actividad de las abejas, Temperatura del ambiente, del apiario y la humedad, con esto, al ingresar los datos en el formulario pedido, se obtiene una gráfica con las estadísticas de actividad solicitadas, esta gráfica se puede descargar.
+                    La generación de estadísticas se realiza por medio de tres variables que tienden a ser las mas importantes para el análisis de la actividad de las abejas, temperatura del ambiente, del apiario y la humedad, con esto, al ingresar los datos en el formulario pedido, se obtiene una gráfica con las estadísticas de actividad solicitadas, esta gráfica se puede descargar.
                 </h3> 
             </div>
             <div>
                 <h1>Estimaciones</h1>>
                 <h3>
-                    En cuanto a las estimaciones se realiza uan aproximación de la actividad con respecto a los datos de entrada que se ingresen en el formulario propuesto (Temperatura y humedad), la estimación dada se mostrará inmediantemente en pantalla.
+                    En cuanto a las estimaciones se realiza una aproximación de la actividad con respecto a los datos de entrada que se ingresen en el formulario propuesto (temperatura y humedad), la estimación dada se mostrará inmediantemente en pantalla.
                 </h3> 
             </div>
             <div>
                 <h1>Análisis</h1>>
                 <h3>
-                    Finalmente en análisis se presenta una gráfica que representa la actividad, temperatura del ambiente, humedad y  temperatura del apiario. En esta gráfica se realcionan los cuatro horarios del día, (Madrugada, mañana, tarde y noche), todo esto con una fecha que se ingresa como dato de entrada en el formulario presentado.
+                    Finalmente en análisis se presenta una gráfica que representa la actividad, temperatura del ambiente, humedad y  temperatura del apiario. En esta gráfica se relacionan los cuatro horarios del día, (Madrugada, mañana, tarde y noche), todo esto con una fecha que se ingresa como dato de entrada en el formulario presentado.
                 </h3> 
             </div>
         </div>
