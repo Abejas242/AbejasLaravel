@@ -32,7 +32,7 @@ class ReportsController extends Controller
         $x;
         $fecha_actual = date("Y-m-d");
       
-        if ($fecha_actual>$fecha) {
+        if ($fecha_actual<$fecha) {
             $x = "La fecha ingresada es posterior a la actual.";
             return view('reports',compact('x'));
         }else{
@@ -73,7 +73,7 @@ class ReportsController extends Controller
         $x1;
         $fecha_actual = date("Y-m-d");
       
-        if ($fecha_actual>$fecha) {
+        if ($fecha_actual<$fecha) {
             $x1 = "La fecha ingresada es posterior a la actual.";
             return view('reports',compact('x1'));
         }else{
@@ -118,7 +118,7 @@ class ReportsController extends Controller
 
         $fecha_actual = date("Y-m-d");
       
-        if ($fecha_actual>$fecha) {
+        if ($fecha_actual<$fecha) {
             $x2 = "La fecha ingresada es posterior a la actual.";
             return view('reports',compact('x2'));
         }else{
@@ -160,7 +160,7 @@ class ReportsController extends Controller
         $x3;
         $fecha_actual = date("Y-m-d");
       
-        if ($fecha_actual>$fecha) {
+        if ($fecha_actual<$fecha) {
             $x3 = "La fecha ingresada es posterior a la actual.";
             return view('reports',compact('x3'));
         }else{
@@ -202,7 +202,7 @@ class ReportsController extends Controller
         $x4;
         $fecha_actual = date("Y-m-d");
       
-        if ($fecha_actual>$fecha) {
+        if ($fecha_actual<$fecha) {
             $x4 = "La fecha ingresada es posterior a la actual.";
             return view('reports',compact('x4'));
         }else{
