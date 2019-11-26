@@ -67,12 +67,12 @@
                         <label name="temperatura">Temperatura (°C) </label>
                         <br>    
                         <input type="number" name="temperatura" id="temperatura" placeholder="Ejemplo: 30"
-                                pattern="[0-9]+" title = "Solo ingresar numeros." required>
+                                pattern="^[0-9]+([,][0-9]+)?$+" title = "Solo ingresar numeros." required>
                         <br> <br>
                         <label name="humedad">Humedad (%)</label>
                         <br>    
                         <input type="number" name="humedad" id="humedad" placeholder="Ejemplo: 30"  
-                            pattern="[0-9]+" title = "Solo ingresar numeros." required>
+                            pattern="^[0-9]+([,][0-9]+)?$" title = "Solo ingresar numeros." required>
                         <br> <br>
                         <button type="submit" name="submit" class="submit" action="{{url('/estimar')}}" >Consultar</button>
                         <br><br>
