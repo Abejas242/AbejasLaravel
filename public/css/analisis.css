@@ -71,6 +71,7 @@ fieldset{
 
 /* Style the collapsible content. Note: hidden by default */
 .content1 {
+<<<<<<< HEAD
     background-color: #eae4e4;
     padding: 0 18px;
     display: none;
@@ -78,4 +79,19 @@ fieldset{
     color: #000000;
     text-align: -webkit-left;
     font-weight: bold;
+=======
+  background-color: #6d6d6d;
+  padding: 0 18px;
+  display:none;
+  overflow: hidden;
+  color:#ffffff;
+  text-align:-webkit-left
+  
+
+}
+
+h3{
+    margin-top: 0px;
+    margin-bottom: 0px;
+>>>>>>> f824e9f03ca762cac49ad5572c643907e6c13bee
 }

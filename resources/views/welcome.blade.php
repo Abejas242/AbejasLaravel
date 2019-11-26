@@ -23,7 +23,7 @@
                         
                     @else
                         <a href="{{ url('/login') }}" class="boton-w">Ingresar</a>
-                        <a href="{{ url('/register') }}" class="boton-w">Registrar</a>     
+                             
                     @endif
                 </div>
             @endif
