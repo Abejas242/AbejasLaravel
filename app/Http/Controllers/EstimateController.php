@@ -70,7 +70,7 @@ class EstimateController extends Controller
                 $x = "La temperatura debe ser positiva";
             }
         }else{
-            $x = "Alguno de los datos ingresados es negativo deben ser positivos.";
+            $x = "Los datos ingresados son negativo deben ser positivos.";
         }
         return view('estimates',compact('x'));
     }
