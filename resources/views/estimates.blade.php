@@ -58,7 +58,7 @@
 
         <main>
             <div class="datos">
-            <p class="ayuda">Ingrese los datos del clima sobre el cual desea estimar la actividad de las abejas</p>
+            <p class="ayuda">Ingrese los datos del clima para realizar la estimación la actividad de las abejas</p>
                 <fieldset class="datos-basicos" >
                     <legend class="titulo-legend">Datos climaticos a ingresar</legend>
                     

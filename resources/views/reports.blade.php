@@ -68,16 +68,16 @@
                             <br><br>
                             <button type="submit"id="boton_general" class="boton-general">Exportar todo</button>
                             <br><br>
-                        </fieldset> 
-                    </section> 
-                </div>
-                <?php 
+<?php 
     $x;
     if(empty($x)){
         $x = " ";
     }
 ?>
                         <h3> {{ $x }}</h3>
+                        </fieldset> 
+                    </section> 
+                </div>
             </form>
                 
             <div class="reporte">
