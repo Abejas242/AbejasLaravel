@@ -30,7 +30,7 @@ html, body {
     width: 100%;
 }
 
-body{
+html{
     background: rgb(254,252,234);
     background: -moz-linear-gradient(45deg, rgba(254,252,234,1) 0%, rgba(239,223,119,1) 100%);
     background: -webkit-linear-gradient(45deg, rgba(254,252,234,1) 0%,rgba(239,223,119,1) 100%);
