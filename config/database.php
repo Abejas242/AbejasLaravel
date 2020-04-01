@@ -49,7 +49,7 @@ return [
             'host' => env('DB_HOST', 'db4free.net'),
             'port' => env('DB_PORT', '3306'),
             'database' => env('DB_DATABASE', 'beelab'),
-            'username' => env('DB_USERNAME', 'beelab'),
+            'username' => env('DB_USERNAME', 'BeeLab'),
             'password' => env('DB_PASSWORD', 'abejas12345'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
